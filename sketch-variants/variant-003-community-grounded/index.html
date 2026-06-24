@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Horizons - Community Property Solutions</title>
+    <meta name="description" content="New Horizons community-grounded approach to property selling. Local, trusted neighborhood service with proven track record helping families in the community.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #92400e;
+            --primary-dark: #78350f;
+            --secondary: #6b7280;
+            --accent: #fbbf24;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --bg-alt: #fefcf5;
+            --border: #fed7aa;
+            --cream: #fef3c7;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--bg-alt) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23fed7aa" fill-opacity="0.3"><circle cx="30" cy="30" r="2"/></g></svg>') repeat;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .neighborhood-badge {
+            background: var(--accent);
+            color: var(--primary-dark);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+            border: 1px solid var(--primary);
+        }
+        
+        /* Service Cards */
+        .services {
+            padding: 100px 0;
+            background: var(--bg);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+        
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: var(--bg-alt);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-color: var(--primary);
+        }
+        
+        .service-card::after {
+            content: 'LOCAL';
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background: var(--danger);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.625rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(239, 68, 68, 0.5); }
+            100% { box-shadow: 0 0 15px rgba(239, 68, 68, 0.8); }
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(146, 64, 14, 0.3);
+        }
+        
+        /* Community Section */
+        .community-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--bg-alt) 0%, #fefce8 100%);
+        }
+        
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .community-card {
+            background: var(--bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .community-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .community-card::before {
+            content: '❤️';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-size: 2rem;
+            opacity: 0.2;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--bg-alt);
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-form {
+            background: var(--bg);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 3px solid var(--border);
+            position: relative;
+        }
+        
+        .contact-form::before {
+            content: 'Local Service';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--danger);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 3px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 16px rgba(217, 119, 6, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--cream);
+            color: var(--primary-dark);
+            padding: 60px 0 20px;
+            border-top: 2px solid var(--primary);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+        }
+        
+        .footer-section p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--primary);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128c7e;
+            transform: translateY(-2px);
+        }
+        
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 1.5rem;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--danger), var(--warning));
+            border-radius: 3px;
+            animation: progress 25s linear infinite;
+            width: 100%;
+        }
+        
+        @keyframes progress {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* Rating Stars */
+        .rating-stars {
+            color: var(--accent);
+            margin: 1rem 0;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            "bg-white shadow-sm sticky top-0 z-50\n<nav>\n        <div class=\"container\">\n            <div class=\"flex justify-between items-center h-16\">\n                <a href=\"#\" class=\"text-2xl font-bold text-amber-800\">New Horizons</a>\n                <ul class=\"hidden md:flex space-x-8\">\n                    <li><a href=\"#\" class=\"hover:text-amber-600\">Home</a></li>\n                    <li><a href=\"#\" class=\"hover:text-amber-600\">Services</a></li>\n                    <li><a href=\"#\" class=\"hover:text-amber-600\">How It Works</a></li>\n                    <li><a href=\"#\" class=\"hover:text-amber-600\">Consultation</a></li>\n                </ul>\n            </div>\n        </div>\n    </nav>\n\n<main>\n    <!-- Hero Section -->\n    <section class=\"py-20 bg-gradient-to-r from-amber-50 to-orange-50\">\n        <div class=\"container\">\n            <div class=\"max-w-4xl mx-auto text-center\">\n                <span class=\"inline-block bg-amber-200 text-amber-800 px-4 py-2 rounded-full text-sm font-semibold mb-6\">Local Neighborhood Service</span>\n                <h1 class=\"text-5xl md:text-6xl font-bold text-amber-900 mb-6\">NEIGHBORHOOD-FOCUSED PROPERTY SOLUTIONS</h1>\n                <p class=\"text-xl text-gray-700 mb-8\">We understand our community. As local residents, we've helped neighbors sell their properties quickly and fairly. Your trusted local cash buyer.</p>\n                \n                <div class=\"flex gap-4 justify-center flex-wrap\">\n                    <a href=\"#\" class=\"bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors\">Get Local Consultation</a>\n                    <a href=\"#\" class=\"bg-white border-2 border-amber-600 text-amber-600 hover:bg-amber-50 px-8 py-4 rounded-lg font-semibold transition-all\">See Local Success Stories</a>\n                </div>\n            </div>\n        </div>\n    </section>\n\n    <!-- Services Section -->\n    <section class=\"py-20 bg-white\">\n        <div class=\"container\">\n            <div class=\"text-center mb-16\">\n                <h2 class=\"text-4xl font-bold text-amber-900 mb-4\">Community-Focused Services</h2>\n                <p class=\"text-xl text-gray-600\">Tailored real estate solutions for our neighborhood and surrounding areas</p>\n            </div>\n            \n            <div class="grid md:grid-cols-3 gap-8\">\n                <div class=\"bg-amber-50 rounded-xl p-8 border-2 border-amber-200 hover:border-amber-400 transition-all\">\n                    <div class=\"w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl\">🏠</div>\n                    <h3 class=\"text-2xl font-bold mb-4 text-amber-900\">Local Home Purchase</h3>\n                    <p class=\"text-gray-700\">We buy properties in our community and surrounding areas. As local residents, we understand the value of every neighborhood and street in our area.</p>\n                </div>\n                \n                <div class=\"bg-amber-50 rounded-xl p-8 border-2 border-amber-200 hover:border-amber-400 transition-all\">\n                    <div class=\"w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl\">👨‍👩‍👧‍👦</div>\n                    <h3 class=\"text-2xl font-bold mb-4 text-amber-900\">Family Solutions</h3>\n                    <p class=\"text-gray-700\">Specializing in helping families transition within our community. We work with families to find the right solutions for their unique situations and needs.</p>\n                </div>\n                \n                <div class=\"bg-amber-50 rounded-xl p-8 border-2 border-amber-200 hover:border-amber-400 transition-all\">\n                    <div class=\"w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl\">🤝</div>\n                    <h3 class=\"text-2xl font-bold mb-4 text-amber-900\">Neighborhood Partners</h3>\n                    <p class=\"text-gray-700\">Long-standing members of our community since 2010. We've built relationships with local contractors, lawyers, and community leaders to serve you better.</p>\n                </div>\n            </div>\n        </div>\n    </section>\n\n    <!-- Community Stories Section -->\n    <section class="py-20 bg-gradient-to-b from-amber-50 to-white\">\n        <div class="container\">\n            <div class=\"text-center mb-16\">\n                <h2 class=\"text-4xl font-bold text-amber-900 mb-4\">Our Community Impact</h2>\n                <p class=\"text-xl text-gray-600\">Real stories from our neighborhood neighbors</p>
+            </div>\n            \n            <div class="grid md:grid-cols-2 gap-8\">\n                <div class=\"bg-white rounded-xl p-8 shadow-lg border border-amber-200\">\n                    <div class=\"flex items-center mb-6\">\n                        <div class=\"w-16 h-16 bg-gray-300 rounded-full mr-4 flex-shrink-0\">\n                            <img src=\"https://api.dicebear.com/7.x/avataaars/svg?seed=family1\" alt=\"Family Avatar\" class=\"w-full h-full rounded-full\">\n                        </div>\n                        <div>\n                            <h3 class=\"font-bold text-lg\">The Johnson Family</h3>\n                            <p class=\"text-sm text-gray-600\">Settled in our neighborhood 15 years ago</p>\n                        </div>\n                    </div>\n                    <p class=\"text-gray-700 italic mb-4\">\"When we needed to downsize after Mom passed, the process was daunting. New Horizons made it smooth and stress-free. We got a fair offer and closed quickly, allowing us to move to the perfect smaller home nearby.Thank you for being our neighbors and helping our family!\"</p>\n                    <div class=\"text-amber-500\">⭐⭐⭐⭐⭐ (5.0)</div>\n                </div>\n                \n                <div class=\"bg-white rounded-xl p-8 shadow-lg border border-amber-200\">\n                    <div class\"flex items-center mb-6\">\n                        <div class=\"w-16 h-16 bg-gray-300 rounded-full mr-4 flex-shrink-0\">\n                            <img src=\"https\://api.dicebear.com/7.x/avataaars/svg?seed=family2\" alt=\"Retired Couple Avatar\" class=\"w-full h-full rounded-full\">\n                        </div>\n                        <div>\n                            <h3 class=\"font-bold text-lg\">The Martinez Couple</h3>\n                            <p class=\"text-sm text-gray-600\">Retired nearby for 8 years</p>\n                        </div>\n                    </div>\n                    <p class=\"text-gray-700 italic mb-4\">\"Our old house needed extensive repairs, and we couldn't afford them. New Horizons offered a fair cash deal that saved us from bankruptcy. They handled everything professionally, and we got to stay in our community!\"</p>\n                    <div class=\"text-amber-500\">⭐⭐⭐⭐⭐ (5.0)</div>\n                </div>\n            </div>\n        </div>\n    </section>\n\n    <!-- Consultation Section -->\n    <section id=\"consultation\" class=\"py-20 bg-white\">\n        <div class=\"container\">\n            <div class=\"max-w-4xl mx-auto\">\n                <div class=\"bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-12 shadow-xl border-2 border-amber-300\">\n                    <h2 class=\"text-4xl font-bold text-center mb-4 text-amber-900\">Community Consultation</h2>\n                    <p class=\"text-xl text-center mb-8 text-gray-700\">Connect with our local team for honest, community-focused property solutions</p>\n                    \n                    <form class=\"space-y-6\">\n                        <div class=\"grid md:grid-cols-2 gap-6\">\n                            <div>\n                                <label class=\"block text-sm font-semibold mb-2 text-amber-900\">First Name</label>\n                                <input type=\"text\" class=\"w-full px-4 py-3 rounded-lg border-2 border-amber-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all\">\n                            </div>\n                            <div>\n                                <label class=\"block text-sm font-semibold mb-2 text-amber-900\">Last Name</label>\n                                <input type=\"text\" class=\"w-full px-4 py-3 rounded-lg border-2 border-amber-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all\">\n                            </div>\n                        </div>\n                        \n                        <div class="grid md:grid-cols-2 gap-6\">\n                            <div>\n                                <label class=\"block text-sm font-semibold mb-2 text-amber-900\">Phone Number</label>\n                                <input type=\"tel\" class=\"w-full px-4 py-3 rounded-lg border-2 border-amber-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all\">\n                            </div>\n                            <div>\n                                <label class=\"block text-sm font-semibold mb-2 text-amber-900\">Neighborhood</label>\n                                <select class=\"w-full px-4 py-3 rounded-lg border-2 border-amber-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all\">\n                                    <option>Select your neighborhood</option>\n                                    <option>Maple Street Area</option>\n                                    <option>Oakwood District</option>\n                                    <option>Riverbend Community</option>\n                                    <option>Other</option>\n                                </select>\n                            </div>\n                        </div>\n                        \n                        <div>\n                            <label class=\"block text-sm font-semibold mb-2 text-amber-900\">Property Address</label>\n                            <input type=\"text\" class=\"w-full px-4 py-3 rounded-lg border-2 border-amber-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all\" placeholder=\"123 Main St, Our Town, State ZIP\">\n                        </div>\n                        \n                        <div>\n                            <label class=\"block text-sm font-semibold mb-2 text-amber-900\">How can we help you?</label>\n                            <textarea rows=\"4\" class=\"w-full px-4 py-3 rounded-lg border-2 border-amber-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all\" placeholder=\"Tell us about your property situation...\"></textarea>\n                        </div>\n                        \n                        <button type=\"submit\" class=\"w-full bg-gradient-to-r from-amber-600 to-orange-600 text-white py-4 px-8 rounded-lg font-semibold text-lg hover:from-amber-700 hover:to-orange-700 transition-all transform hover:scale-105 shadow-lg\">Connect with Our Local Team</button>\n                    </form>\n                    \n                    <div class=\"mt-8 p-6 bg-white rounded-lg border border-amber-200\">\n                        <div class=\"flex items-center justify-center space-x-8 text-sm text-gray-600\">\n                            <div class=\"flex items-center\">\n                                <span class=\"text-green-600 mr-2\">✅</span>\n                                <span>Free no-obligation consultation</span>\n                            </div>\n                            <div class=\"flex items-center\">\n                                <span class=\"text-green-600 mr-2\">✅</span>\n                                <span>Backed by 35+ years local experience</span>\n                            </div>\n                            <div class=\"flex items-center\">\n                                <span class=\"text-green-600 mr-2\">✅</span>\n                                <span>Over 200+ happy neighbors served</span>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n</main>\n\n    <!-- Footer -->\n    <footer class=\"bg-amber-900 text-white py-12\">\n        <div class=\"container\">\n            <div class=\"grid md:grid-cols-4 gap-8\">\n                <div>\n                    <h3 class=\"text-2xl font-bold mb-4 text-amber-200\">New Horizons</h3>\n                    <p class=\"text-amber-300\">Your trusted local real estate cash buyer since 2010. We've been helping our community with fair, fast property solutions for over a decade.</p>\n                </div>\n                \n                <div>\n                    <h4 class=\"text-lg font-semibold mb-4 text-amber-200\">Our Services</h4>\n                    <ul class=\"space-y-2 text-amber-300\">\n                        <li>Local Home Purchase</li>\n                        <li>Family Relocation Help</li>\n                        <li>Neighborhood Expertise</li>\n                        <li>Fair Cash Offers</li>\n                    </ul>\n                </div>\n                \n                <div>\n                    <h4 class=\"text-lg font-semibold mb-4 text-amber-200\">Community</h4>\n                    <ul class=\"space-y-2 text-amber-300\">\n                        <li>About Our History</li>\n                        <li>Success Stories</li>\n                        <li>Local Partnerships</li>
+                        <li>Neighborhood Guides</li>\n                    </ul>\n                </div>\n                \n                <div>\n                    <h4 class=\"text-lg font-semibold mb-4 text-amber-200\">Contact Our Local Team</h4>\n                    <ul class=\"space-y-2 text-amber-300\">\n                        <li>📞 (555) 123-4567</li>\n                        <li>✉️ hello@newhorizonslocal.com</li>\n                        <li>📍 Serving Our Greater Community</li>\n                    </ul>\n                </div>\n            </div>\n            \n            <div class=\"border-t border-amber-700 mt-8 pt-8\">\n                <p class=\"text-center text-amber-300\">&copy; 2024 New Horizons Local Real Estate. Proudly serving our community for over a decade.</p>\n            </div>\n        </div>\n    </footer>\n\n    <script>\n        // Local phone number formatting\n        document.querySelectorAll('input[type=\"tel\"]').forEach(input => {\n            input.addEventListener('input', function(e) {\n                let value = e.target.value.replace(/\\D/g, '');\n                if (value.length >= 10) {\n                    value = '(' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10);\n                }\n                e.target.value = value;\n            });\n        });\n        \n        // Form submission\n        document.querySelector('form').addEventListener('submit', function(e) {\n            e.preventDefault();\n            \n            // Show success message\n            const originalBtn = document.querySelector('button[type=\"submit\"]');\n            const originalText = originalBtn.textContent;\n            originalBtn.textContent = 'Connecting you with our local team...';\n            originalBtn.classList.add('bg-gray-500');\n            \n            setTimeout(() => {\n                alert('Welcome! Thank you for reaching out to New Horizons. Our local team will contact you within 2 hours to schedule your free consultation. We\'re excited to help you with your property needs and show you why we\'re the trusted choice in our community!');\n                \n                // Reset form\n                document.querySelector('form').reset();\n                originalBtn.textContent = originalText;\n                originalBtn.classList.remove('bg-gray-500');\n            }, 2000);\n        });\n        \n        // Smooth scrolling for anchor links\n        document.querySelectorAll('a[href^="#\"]').forEach(anchor => {\n            anchor.addEventListener('click', function(e) {\n                e.preventDefault();\n                const target = document.querySelector(this.getAttribute('href'));\n                if (target) {\n                    const offset = 80;\n                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;\n                    window.scrollTo({\n                        top: targetPosition,\n                        behavior: 'smooth'\n                    });\n                }\n            });\n        });\n    </script>\n</body>\n</html>

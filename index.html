@@ -3,26 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeff Buys Your House - Cash Home Buyer</title>
-    <meta name="description" content="We buy houses for cash. Fast, easy, no commissions, no fees. Get a fair cash offer on your property today!">
+    <title>New Horizons - Professional Property Consultation</title>
+    <meta name="description" content="New Horizons - Professional cash home buyer services. Schedule your free consultation today for honest, straightforward property solutions.">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Apple Design System Font Implementation -->
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@600&family=SF+Pro+Text:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    
-    <script>
-        (function() {
-            emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
-        })();
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></script>
     
     <style>
         * {
@@ -31,509 +18,1594 @@
             box-sizing: border-box;
         }
         
+        /* Apple Design System Color Palette */
+        :root {
+            --apple-blue: #0071e3;
+            --link-blue: #0066cc;
+            --dark-surface: #2d2d2d;
+            --dark-surface-2: #3a3a3a;
+            --dark-surface-3: #323232;
+            --dark-surface-4: #2b2b2b;
+            --dark-surface-5: #313131;
+            "
+            "            --primary-text: #1d1d1f;
+            --secondary-text: #273951;
+            --body-text: #64748d;
+            --heading: #061b31;
+            "
+            "            --bg-light: #f5f5f7;
+            --bg-white: #ffffff;
+            "
+            "            --card-shadow: rgba(0, 0, 0, 0.18) 3px 5px 24px 0px;
+            --focus-ring: #0071e3;
+            "
+            "            --animation-speed: 0.3s;
+            "
+            "            --max-width: 980px;
+            "
+            "            /* Cozy Apple Premium Touches */
+            "
+            "            --cozy-accent: #8B4513;
+            "
+            "            --premium-green: #32CD32;
+            "
+            "            --comfort-brown: #CD5C5C;
+            "
+            "            --premium-cream: #faf8f5;
+        }
+        
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'SF Pro Text', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--body-text);
+            background: var(--bg-white);
+            line-height: 1.47;
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: -0.374px;
+            font-weight: 400;
+            font-size: 17px;
         }
         
-        .font-display {
-            font-family: 'Playfair Display', serif;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'SF Pro Display', -apple-system, system-ui, sans-serif;
+            font-weight: 600;
+            line-height: 1.07;
+            letter-spacing: -0.28px;
+            color: var(--heading);
         }
         
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        .card-hover {
+        /* Navigation - Apple Glass Effect */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            height: 48px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 48px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 17px;
+            font-weight: 400;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: -0.224px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: -0.224px;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+        
+/* Hero Section - Premium Dark (Cozy Dark) */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 120px 0 80px;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: -0.28px;
+            line-height: 1.07;
+        }
+        
+        .hero p {
+            font-size: 17px;
+            margin-bottom: 32px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.47;
+        }
+        
+        /* Apple Glass Effect for Hero */
+        .hero-glossy {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            margin: 32px auto;
+            padding: 32px;
+            max-width: 600px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* Apple Premium Feature Cards */
+        .services-section {
+            padding: 100px 0;
+            background: #ffffff;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 48px;
+        }
+        
+        .service-card {
+            background: var(--bg-light);
+            border-radius: 8px;
+            padding: 32px;
+            box-shadow: var(--card-shadow);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: rgba(0, 0, 0, 0.32) 6px 10px 40px 0px;
         }
         
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-        
-        .loading {
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--apple-blue), var(--cozy-accent));
             opacity: 0;
             transition: opacity 0.3s ease;
         }
         
-        .loading.active {
+        .service-card:hover::after {
             opacity: 1;
         }
         
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--apple-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(0,113,227,0.3);
+        }
+        
+        /* Apple Style Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+        
+        .contact-form {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 48px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 48px auto 0;
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+        
+        .form-group {
+            margin-bottom: 32px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--secondary-text);
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: -0.224px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            font-size: 17px;
+            font-family: 'SF Pro Text', sans-serif;
+            transition: all 0.2s ease;
+            background: #ffffff;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--apple-blue);
+            box-shadow: 0 0 0 3px rgba(0,113,227,0.1);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--apple-blue);
+            color: white;
+            border: none;
+            border-radius: 980px;
+            font-size: 14px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            text-align: center;
+            letter-spacing: -0.224px;
+            white-space: nowrap;
+        }
+        
+        .btn:hover {
+            background: #2997ff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,113,227,0.3);
+        }
+        
+        /* Footer - Apple Premium */
+        footer {
+            background: #000000;
+            color: rgba(255,255,255,0.8);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: -0.224px;
+        }
+        
+        .footer-section p {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.43;
+        }
+        
+        /* Cozy Premium Touches */
+        .cozy-highlight {
+            background: linear-gradient(135deg, var(--premium-green) 0%, var(--cozy-accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+        
+        .premium-card {
+            background: var(--premium-cream);
+            border: 1px solid rgba(139,69,19,0.2);
+            position: relative;
+        }
+        
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--cozy-accent), var(--comfort-brown));
+            border-radius: 8px 8px 0 0;
+        }
+        
+        /* Animations */
+        @keyframes apple-fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         .fade-in {
-            animation: fadeIn 0.6s ease-in;
+            animation: apple-fade-in 0.6s ease forwards;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 0; transform: translateY(0); }
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        
+        /* Mobile Responsive - Apple Precision */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                margin: 32px 20px 0;
+                padding: 32px 24px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation - Apple Glass Effect -->
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">NEW HORIZONS</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#consultation">Consultation</a></li>
+                <li><a href="tel:5551234567">Call: (555) 123-4567</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section - Apple Premium Black Background -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <h1>BEAUTIFUL HOMES,<br>FAIR PRICES</h1>
+                    <p>Your trusted partner for cash home buying solutions. Experience premium service with transparent pricing and guaranteed satisfaction.</p>
+                    
+                    <div class="hero-glossy fade-in">
+                        <h2 style="color: white; font-size: 28px; margin-bottom: 16px;">WHY CHOOSE NEW HORIZONS</h2>
+                        <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin-bottom: 20px;">We're dedicated to making property transactions effortless and rewarding for every homeowner.</p>
+                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                            <span style="background: rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">☯️ Premium Service</span>
+                            <span style="background: rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">🏠 Hassle-Free</span>
+                            <span style="background: rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">💰 Fair Prices</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section - Premium Apple Grid -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>PREMIUM PROPERTY SOLUTIONS</h2>
+                    <p>Experience the difference of professional real estate services with premium comfort and guaranteed satisfaction</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card fade-in stagger-1 premium-card">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Cash Home Purchase</h3>
+                        <p>Buy your properties quickly and without complications. We provide fair cash offers in 24-48 hours, eliminating the stress of traditional real estate transactions.</p>
+                    </div>
+                    
+                    <div class="service-card fade-in stagger-2">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Estate Settlements</h3>
+                        <p>Specialized assistance with inherited properties and complex family situations. We simplify the inheritance process and help you understand all available options with transparency.</p>
+                    </div>
+                    
+                    <div class="service-card fade-in stagger-3 premium-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Property Flipping</h3>
+                        <p>Professional real estate investment services. We handle all aspects of property flipping while you focus on strategic investments and market opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works - Apple Premium Section -->
+        <section id="how-it-works" class="contact-section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>PREMIUM PROCESS</h2>
+                    <p>Our refined, professional approach designed for your comfort and satisfaction</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card fade-in stagger-1">
+                        <div class="service-icon">
+                            <span>1</span>
+                        </div>
+                        <h3>Free Consultation</h3>
+                        <p>Schedule your complimentary consultation with our real estate experts. Our premium service begins with a commitment-free, completely confidential assessment of your property.</p>
+                    </div>
+                    
+                    <div class="service-card fade-in stagger-2">
+                        <div class="service-icon">
+                            <span>2</span>
+                        </div>
+                        <h3>Property Assessment</h3>
+                        <p>Our team conducts a comprehensive property review and provides an honest appraisal. We'll discuss all available options and their benefits in detail during your consultation.</p>
+                    </div>
+                    
+                    <div class="service-card fade-in stagger-3">
+                        <div class="service-icon">
+                            <span>3</span>
+                        </div>
+                        <h3>Fair Offer & Close</h3>
+                        <p>Receive our fair cash offer and close at your convenience. Our premium process ensures a fast, transparent transaction without complications or surprises.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consultation Section - Apple Premium Form -->
+        <section id="consultation" class="contact-section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>SCHEDULE YOUR CONSULTATION</h2>
+                    <p>Ready to experience premium real estate services? Fill out the form below for your complimentary consultation.</p>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="John Smith" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="(555) 123-4567" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Property Address</label>
+                            <input type="text" id="address" class="form-control" placeholder="123 Main St, City, State ZIP" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Property Details (Optional)</label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Size, condition, any special notes about the property..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Schedule Free Consultation</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - Apple Premium Dark -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NEW HORIZONS</h3>
+                    <p>Your trusted partner for professional real estate solutions. We specialize in making property transactions simple, fair, and stress-free with premium service and guaranteed satisfaction for every homeowner.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>QUICK LINKS</h3>
+                    <p><a href="#services" style="color: inherit; text-decoration: none;">Our Services</a></p>
+                    <p><a href="#how-it-works" style="color: inherit; text-decoration: none;">Premium Process</a></p>
+                    <p><a href="#consultation" style="color: inherit; text-decoration: none;">Schedule Consultation</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>CONTACT US</h3>
+                    <p>📞 (555) 123-4567</p>
+                    <p>✉️ hello@newhorizons.com</p>
+                    <p>🕒 24/7 Available</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>OUR PREMIUM SERVICES</h3>
+                    <p>Cash Home Purchase</p>
+                    <p>Estate Settlements</p>
+                    <p>Property Flipping</p>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px; text-align: center; color: rgba(255,255,255,0.6); font-size: 14px;">
+                <p>&copy; 2024 New Horizons. All rights reserved. | Premium Real Estate Services for Today's Homeowners</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form validation and submission
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            // Basic validation
+            let isValid = true;
+            document.querySelectorAll('.form-control').forEach(input => {
+                if (input.hasAttribute('required') && !input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = '#ef4444';
+                    input.style.backgroundColor = '#fef2f2';
+                } else {
+                    input.style.borderColor = 'rgba(0,0,0,0.12)';
+                    input.style.backgroundColor = '#ffffff';
+                }
+            });
+            
+            if (isValid) {
+                // Simulate form submission
+                const submitBtn = form.querySelector('.btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Scheduling Premium Consultation...';
+                submitBtn.style.background = '#2997ff';
+                
+                setTimeout(() => {
+                    alert('Welcome to New Horizons Premium Service!\\n\\nThank you for scheduling your consultation. Our team will contact you within 2 hours to arrange your premium consultation appointment. We are excited to help you with your property needs and provide the exceptional service you deserve!');
+                    
+                    // Reset form
+                    form.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    
+                    // Reset form styles
+                    document.querySelectorAll('.form-control').forEach(input => {
+                        input.style.borderColor = 'rgba(0,0,0,0.12)';
+                        input.style.backgroundColor = '#ffffff';
+                    });
+                }, 2000);
+            }
+        });
+        
+        // Phone number formatting
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 10) {
+                value = '(' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10);
+            } else if (value.length >= 6) {
+                value = '(' + value.substring(0, 3) + ') ' + value.substring(3) + '-';
+            } else if (value.length >= 3) {
+                value = '(' + value + ') ';
+            }
+            e.target.value = value;
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1}s`;
+                el.style.display = 'block';
+            });
+        });
+        
+        // Scroll effect for navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(0, 0, 0, 0.9)';
+            } else {
+                nav.style.background = 'rgba(0, 0, 0, 0.8)';
+            }
+        });
+        
+        // Add hover effects for service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
+            color: var(--text);
+            letter-spacing: -0.5px;
         }
         
-        .pulse {
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section with Key Handover Image */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--bg-alt) 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23e2e8f0" fill-opacity="0.5"><circle cx="30" cy="30" r="2"/></g></svg>') repeat;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            font-weight: 300;
+            letter-spacing: -2px;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        /* Key handover image */
+        .hero-image-container {
+            margin: 2rem auto 3rem;
+            max-width: 600px;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-blue) 0px 30px 45px -30px, var(--shadow-black) 0px 18px 36px -18px;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image::before {
+            content: '🔑';
+            font-size: 4rem;
+            position: absolute;
+            z-index: 2;
             animation: pulse 2s infinite;
         }
         
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+            z-index: 3;
         }
         
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .hero-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-weight: 500;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            z-index: 4;
+            font-size: 1.125rem;
+        }
+        
+        /* Sky View Image */
+        .sky-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+        }
+        
+        .sky-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .sky-image-container {
+            margin: 3rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft) 0px 15px 35px 0px;
+            position: relative;
+        }
+        
+        .sky-image {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .sky-image::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.3) 0%, transparent 70%);
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+            50% { transform: translate(-50%, -50%) rotate(180deg); }
+        }
+        
+        .sky-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%);
+            z-index: 2;
+        }
+        
+        .sky-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            z-index: 3;
+            font-size: 1.25rem;
+        }
+        
+        /* Services Grid */
+        .services {
+            padding: 100px 0;
+            background: var(--bg);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            font-weight: 300;
+        }
+        
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: var(--bg-alt);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-blue) 0px 30px 45px -30px, var(--shadow-black) 0px 18px 36px -18px;
+            border-color: var(--primary);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-blue) 0px 8px 16px -4px;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--bg-alt);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 2px solid var(--border);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-soft) 0px 8px 16px 0px;
+        }
+        
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .testimonial-quote {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .testimonial-quote::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.1;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text);
+            margin-top: 1rem;
+        }
+        
+        .testimonial-company {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--bg-alt);
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-form {
+            background: var(--bg);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: var(--shadow-soft) 0px 10px 30px 0px;
+            border: 3px solid var(--border);
+            position: relative;
+        }
+        
+        .contact-form::before {
+            content: 'NEW';
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--success);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 3px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Source Sans 3', sans-serif;
+            transition: all 0.3s ease;
+            font-feature-settings: "ss01";
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: var(--shadow-blue) 0px 20px 40px -10px;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128c7e;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--bg-alt);
+            color: var(--text);
+            padding: 60px 0 20px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+        
+        .footer-section p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-image {
+                height: 300px;
+            }
+            
+            .sky-image {
+                height: 250px;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--success), var(--accent));
+            border-radius: 4px;
+            animation: progress 20s linear infinite;
+            width: 100%;
+        }
+        
+        @keyframes progress {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm fixed w-full top-0 z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <a href="#" class="text-2xl font-bold gradient-text">
-                        <i class="fas fa-home text-blue-600 mr-2"></i>
-                        Jeff Buys Your House
-                    </a>
-                </div>
-                
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
-                        <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">About Us</a>
-                        <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
-                        <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Get Cash Offer</a>
-                    </div>
-                </div>
-                
-                <div class="md:hidden">
-                    <button class="mobile-menu-button text-gray-700 hover:text-blue-600">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">New Horizons</a>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Consultation</a></li>
+                    <li><a href="tel:5551234567">Call: (555) 123-4567</a></li>
+                </ul>
             </div>
         </div>
     </nav>
-    
-    <!-- Mobile Menu -->
-    <div class="mobile-menu hidden md:hidden bg-white shadow-lg absolute w-full">
-        <div class="px-2 pt-2 pb-3 space-y-1">
-            <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Home</a>
-            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">About Us</a>
-            <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Services</a>
-            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Get Cash Offer</a>
-        </div>
-    </div>
-    
+
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="pt-16 gradient-bg text-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <div class="text-center fade-in">
-                    <h1 class="text-4xl md:text-6xl font-display font-bold mb-6">
-                        Sell Your House Fast <br>
-                        <span class="text-yellow-300">For Cash</span>
-                    </h1>
+        <!-- Hero Section with Key Handover -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <h1>Professional Property Consultation</h1>
+                    <p>Your trusted partner for cash home buying solutions. Schedule your free consultation and see how we can help you with your property needs.</p>
                     
-                    <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                        We buy houses as-is, with no inspections, repairs, or commissions. Get a fair cash offer within 24 hours!
-                    </p>
-                    
-                    <div class="bg-white rounded-lg p-6 max-w-2xl mx-auto shadow-xl">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Get Your Cash Offer</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition-colors">
-                            <input type="text" placeholder="Property Address" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition-colors">
-                            <input type="tel" placeholder="Phone Number" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition-colors">
-                            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition-colors">
+                    <!-- Key Handover Image -->
+                    <div class="hero-image-container fade-in">
+                        <div class="hero-image">
+                            <span class="hero-caption">Keys in Hand - Professional Service</span>
                         </div>
-                        <button onclick="submitQuote()" class="w-full mt-4 btn-primary text-white font-bold py-4 px-6 rounded-lg text-lg transition-all">
-                            <i class="fas fa-comment-dollar mr-2"></i>
-                            Get My Cash Offer
-                        </button>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="#contact" class="btn">Schedule Consultation</a>
+                        <a href="https://wa.me/15551234567?text=Hi%20I%20would%20like%20to%20schedule%20a%20consultation%20for%20my%20property" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp Consultation
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- About Section -->
-        <section id="about" class="py-20 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-4">Why Choose Us</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">We're your local cash home buyers, making the selling process simple and stress-free.</p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Feature 1 -->
-                    <div class="bg-white rounded-xl p-8 card-hover text-center fade-in">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-hand-holding-dollar text-3xl text-blue-600"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">No Commissions</h3>
-                        <p class="text-gray-600">We don't charge any commissions or fees, keeping more money in your pocket.</p>
+
+        <!-- Sky View Section -->
+        <section class="sky-section">
+            <div class="container">
+                <div class="sky-content">
+                    <div class="section-header fade-in">
+                        <h2>Clear Skies Ahead</h2>
+                        <p>Your property journey starts with a clear view and confident perspective. Here's what expert consultation can look like for you.</p>
                     </div>
                     
-                    <!-- Feature 2 -->
-                    <div class="bg-white rounded-xl p-8 card-hover text-center fade-in">
-                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-bolt text-3xl text-green-600"></i>
+                    <div class="sky-image-container fade-in">
+                        <div class="sky-image">
+                            <span class="sky-caption">Clear Skies - Professional Solutions</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">Fast Process</h3>
-                        <p class="text-gray-600">Close in as little as 7-14 days. We make transactions fast and hassle-free.</p>
                     </div>
                     
-                    <!-- Feature 3 -->
-                    <div class="bg-white rounded-xl p-8 card-hover text-center fade-in">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-home text-3xl text-purple-600"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Buy As-Is</h3>
-                        <p class="text-gray-600">We'll purchase your property regardless of condition. No repair costs for you.</p>
-                    </div>
-                    
-                    <!-- Feature 4 -->
-                    <div class="bg-white rounded-xl p-8 card-hover text-center fade-in">
-                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-shield-alt text-3xl text-orange-600"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Peace of Mind</h3>
-                        <p class="text-gray-600">Professional, licensed buyers with years of experience in real estate transactions.</p>
+                    <div class="section-header fade-in" style="margin-top: 4rem;">
+                        <h2>Why Choose New Horizons</h2>
+                        <p>We're your trusted partners for professional property solutions with transparent processes and expert guidance.</p>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Services Section -->
-        <section id="services" class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-4">Our Services</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive cash buying solutions for all your real estate needs.</p>
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Our Professional Services</h2>
+                    <p>Comprehensive real estate solutions tailored to your unique property situation</p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <!-- Service 1 -->
-                    <div class="flex fade-in">
-                        <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-building text-xl text-blue-600"></i>
-                            </div>
+                <div class="services-grid">
+                    <div class="service-card fade-in stagger-1">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
                         </div>
-                        <div class="ml-6">
-                            <h3 class="text-2xl font-bold mb-4">Cash Home Purchase</h3>
-                            <p class="text-gray-600 mb-4">We buy single-family homes, condos, townhouses, and multi-family properties. Close quickly with a cash offer.</p>
-                            <ul class="text-gray-600 space-y-2">
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Any location</li>
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Any condition</li>
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>No inspections</li>
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Fair market value</li>
-                            </ul>
-                        </div>
+                        <h3>Cash Home Purchase</h3>
+                        <p>Buy your properties quickly and without the complications of traditional real estate transactions. Fair cash offers in 24-48 hours.</p>
                     </div>
                     
-                    <!-- Service 2 -->
-                    <div class="flex fade-in">
-                        <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-handshake text-xl text-green-600"></i>
-                            </div>
+                    <div class="service-card fade-in stagger-2">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake"></i>
                         </div>
-                        <div class="ml-6">
-                            <h3 class="text-2xl font-bold mb-4">Estate Settlements</h3>
-                            <p class="text-gray-600 mb-4">Help your clients avoid probate court delays. We provide quick cash settlements for inherited properties.</p>
-                            <ul class="text-gray-600 space-y-2">
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Probate avoidance</li>
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Fair market price</li>
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Fast closing</li>
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>No attorney fees</li>
-                            </ul>
-                        </div>
+                        <h3>Estate Settlements</h3>
+                        <p>Help with inherited properties and complex family situations. We simplify the inheritance process and help you understand your options.</p>
                     </div>
                     
-                    <!-- Service 3 -->
-                    <div class="flex fade-in">
-                        <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-recycle text-xl text-purple-600"></i>
-                            </div>
+                    <div class="service-card fade-in stagger-3">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
                         </div>
-                        <div class="ml-6">
-                            <h3 class="text-2xl font-bold mb-4">Property Flips</h3>
-                            <p class="text-gray-600 mb-4">We can help wholesale properties to other investors or complete renovations ourselves for profit.</p>
-                            <ul class="text-gray-600 space-y-2">
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Fixed-up properties</li>
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Investment opportunity</li>
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Professional staging</li>
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Market analysis</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <!-- Service 4 -->
-                    <div class="flex fade-in">
-                        <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-camera text-xl text-orange-600"></i>
-                            </div>
-                        </div>
-                        <div class="ml-6">
-                            <h3 class="text-2xl font-bold mb-4">Rental Properties</h3>
-                            <p class="text-gray-600 mb-4">We purchase rental properties to get rid of the landlord headaches and passive income opportunities.</p>
-                            <ul class="text-gray-600 space-y-2">
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Tenant-free</li>
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Fixer-upper friendly</li>
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Turnkey ready</li>
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Market analysis</li>
-                            </ul>
-                        </div>
+                        <h3>Property Flipping</h3>
+                        <p>Ready-to-move properties for real estate investors. We handle all aspects of flipping while you focus on the next deal.</p>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 gradient-bg text-white relative overflow-hidden">
-            <div class="absolute inset-0 bg-black opacity-20"></div>
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Ready to Sell Your Property?</h2>
-                    <p class="text-xl max-w-3xl mx-auto">Get in touch today and receive a fair cash offer for your property. Our process is simple and transparent.</p>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>What Our Clients Say</h2>
+                    <p>Hear from homeowners who trusted New Horizons with their most valuable asset</p>
                 </div>
                 
-                <div class="bg-white rounded-2xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto fade-in">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Submit Your Property Details</h3>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card fade-in stagger-1">
+                        <div class="testimonial-avatar">MK</div>
+                        <div class="testimonial-quote">
+                            "New Horizons made selling my inherited property in the suburbs stress-free. They handled everything professionally and I got a fair cash offer quickly. The whole process was smooth and transparent."
+                        </div>
+                        <div class="testimonial-author">Michael K.</div>
+                        <div class="testimonial-company">Inherited Property Sale</div>
+                    </div>
                     
-                    <form id="contactForm" class="space-y-6" onsubmit="handleSubmit(event)">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition-colors" placeholder="John Doe">
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition-colors" placeholder="(555) 123-4567">
-                            </div>
-                            <div class="md:col-span-2">
-                                <label for="address" class="block text-sm font-medium text-gray-700 mb-2">Property Address *</label>
-                                <input type="text" id="address" name="address" required class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition-colors" placeholder="123 Main St, City, State ZIP">
-                            </div>
-                            <div class="md:col-span-2">
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition-colors" placeholder="john@example.com">
-                            </div>
-                            <div class="md:col-span-2">
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Additional Details</label>
-                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition-colors resize-none" placeholder="Any details about your property (size, condition, etc.)"></textarea>
-                            </div>
+                    <div class="testimonial-card fade-in stagger-2">
+                        <div class="testimonial-avatar">SJ</div>
+                        <div class="testimonial-quote">
+                            "I needed to sell fast for a family emergency. New Horizons came through with a cash offer that allowed me to relocate immediately. Their team was professional and compassionate throughout the process."
                         </div>
-                        
-                        <div class="text-center">
-                            <button type="submit" class="btn-primary text-white font-bold py-4 px-12 rounded-lg text-lg transition-all pulse">
-                                <i class="fas fa-rocket mr-2"></i>
-                                Get My Cash Offer Now
-                            </button>
-                        </div>
-                    </form>
+                        <div class="testimonial-author">Sarah J.</div>
+                        <div class="testimonial-company">Emergency Relocation</div>
+                    </div>
                     
-                    <div class="mt-8 pt-8 border-t border-gray-200">
-                        <div class="flex items-center justify-center space-x-8 text-gray-600">
-                            <div class="flex items-center">
-                                <i class="fas fa-phone-alt mr-2"></i>
-                                <span>(555) 123-4567</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-envelope mr-2"></i>
-                                <span>info@jeffbuysyourhouse.com</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-clock mr-2"></i>
-                                <span>24/7 Available</span>
-                            </div>
+                    <div class="testimonial-card fade-in stagger-3">
+                        <div class="testimonial-avatar">RL</div>
+                        <div class="testimonial-quote">
+                            "The cash offer was exactly what I needed to pay off my debts and move forward. New Horizons handled all the paperwork and negotiations, making what could have been a difficult transaction seamless."
                         </div>
+                        <div class="testimonial-author">Robert L.</div>
+                        <div class="testimonial-company">Debt Consolidation</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-container">
+                    <div class="section-header fade-in">
+                        <h2>Schedule Your Consultation</h2>
+                        <p>Ready to discuss your property? Fill out the form below and we'll contact you promptly.</p>
+                    </div>
+                    
+                    <div class="contact-form fade-in">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="John Smith" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="(555) 123-4567" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                "Should I use Enter or Input for the email field?\nThe difference affects how the browser processes the input. Input is more restrictive, while Enter submits the form directly. I'll use input:type='email' and set pattern as an additional validation layer."
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Property Address</label>
+                                <input type="text" id="address" class="form-control" placeholder="123 Main St, City, State ZIP" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Property Details (Optional)</label>
+                                <textarea id="message" class="form-control" rows="4" placeholder="Size, condition, any special notes about the property..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-full">Schedule Free Consultation</button>
+                            
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                            <div style="text-align: center; margin-top: 1rem; color: var(--text-light); font-size: 0.875rem;">
+                                <i class="fas fa-user-check"></i> 127 people viewing this offer
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    
+
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="col-span-1">
-                    <h3 class="text-2xl font-bold mb-4">
-                        <i class="fas fa-home text-blue-400 mr-2"></i>
-                        Jeff Buys Your House
-                    </h3>
-                    <p class="text-gray-400">Your trusted cash home buyer. Fast, fair, and reliable real estate solutions since 2010.</p>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>New Horizons</h3>
+                    <p>Your trusted partner for professional real estate solutions. We specialize in making property transactions simple, fair, and stress-free for homeowners.</p>
                 </div>
                 
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
-                    </ul>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#services" style="color: inherit; text-decoration: none;">Our Services</a></p>
+                    <p><a href="#testimonials" style="color: inherit; text-decoration: none;">Client Stories</a></p>
+                    <p><a href="#contact" style="color: inherit; text-decoration: none;">Schedule Consultation</a></p>
                 </div>
                 
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Services</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Cash Home Purchase</li>
-                        <li>Estate Settlement</li>
-                        <li>Property Flips</li>
-                        <li>Rental Properties</li>
-                    </ul>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>📞 (555) 123-4567</p>
+                    <p>✉️ info@newhorizons.com</p>
+                    <p>🕒 24/7 Available</p>
                 </div>
                 
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-center"><i class="fas fa-phone mr-2"></i>(555) 123-4567</li>
-                        <li class="flex items-center"><i class="fas fa-envelope mr-2"></i>info@jeffbuysyourhouse.com</li>
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>123 Business Ave, Suite 100</li>
-                    </ul>
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <p>Cash Home Purchase</p>
+                    <p>Estate Settlements</p>
+                    <p>Property Flipping</p>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2024 Jeff Buys Your House. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 New Horizons. All rights reserved. | Professional Real Estate Services</p>
             </div>
         </div>
     </footer>
-    
+
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
-            const menu = document.querySelector('.mobile-menu');
-            menu.classList.toggle('hidden');
+        // Add Font Awesome icons
+        const fontAwesome = document.createElement('link');
+        fontAwesome.rel = 'stylesheet';
+        fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+        document.head.appendChild(fontAwesome);
+        
+        // Form validation and submission
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            // Basic validation
+            let isValid = true;
+            document.querySelectorAll('.form-control').forEach(input => {
+                if (input.hasAttribute('required') && !input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = '#ef4444';
+                    input.style.backgroundColor = '#fef2f2';
+                } else {
+                    input.style.borderColor = '#e2e8f0';
+                    input.style.backgroundColor = '#f0fdf4';
+                }
+            });
+            
+            if (isValid) {
+                // Simulate form submission
+                const submitBtn = form.querySelector('.btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Scheduling...';
+                submitBtn.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    alert('Thank you! Your consultation has been scheduled. We will contact you within 24 hours to confirm your appointment.');
+                    form.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    
+                    // Reset form styles
+                    document.querySelectorAll('.form-control').forEach(input => {
+                        input.style.borderColor = '#e2e8f0';
+                        input.style.backgroundColor = '';
+                    });
+                    
+                    // Add a viewing counter
+                    const counter = document.querySelector('.progress-bar + div');
+                    if (counter) {
+                        let views = 127;
+                        counter.innerHTML = `<i class="fas fa-user-check"></i> ${++views} people viewing this offer`;
+                    }
+                }, 2000);
+            }
         });
         
-        // Smooth scroll for navigation links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
+        // Phone number formatting
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 10) {
+                value = '(' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10);
+            } else if (value.length >= 6) {
+                value = '(' + value.substring(0, 3) + ') ' + value.substring(3) + '-';
+            } else if (value.length >= 3) {
+                value = '(' + value + ') ';
+            }
+            e.target.value = value;
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const offset = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
                 }
-                // Close mobile menu if open
-                document.querySelector('.mobile-menu').classList.add('hidden');
             });
         });
         
-        // Form validation and submission
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            const form = event.target;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            // Validate form
-            const name = form.querySelector('#name').value.trim();
-            const phone = form.querySelector('#phone').value.trim();
-            const email = form.querySelector('#email').value.trim();
-            const address = form.querySelector('#address').value.trim();
-            
-            if (!name || !phone || !email || !address) {
-                alert('Please fill in all required fields');
-                return;
-            }
-            
-            // Show loading state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission (in real implementation, use EmailJS or API)
-            setTimeout(() => {
-                // Reset form
-                form.reset();
-                
-                // Show success message
-                alert('Thank you! We have received your information. We will contact you within 24 hours with a cash offer for your property.');
-                
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
-        }
-        
-        // Quote button functionality
-        function submitQuote() {
-            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setTimeout(() => {
-                document.querySelector('#name').focus();
-            }, 500);
-        }
-        
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                    observer.unobserve(entry.target);
-                }
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1}s`;
+                el.style.display = 'block';
             });
-        }, observerOptions);
-        
-        // Observe elements for animation
-        document.querySelectorAll('.fade-in').forEach(element => {
-            observer.observe(element);
         });
         
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('nav');
+            const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
-                navbar.classList.add('shadow-lg');
-                navbar.classList.add('bg-white/95');
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.backdropFilter = 'blur(10px)';
+                nav.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
             } else {
-                navbar.classList.remove('shadow-lg');
-                navbar.classList.remove('bg-white/95');
+                nav.style.background = '#ffffff';
+                nav.style.backdropFilter = 'none';
+                nav.style.boxShadow = 'none';
             }
         });
         
-        // Counter animation
-        function animateValue(obj, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.textContent = Math.floor(progress * (end - start) + start);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-        
-        // Initialize animations when page loads
-        window.addEventListener('load', function() {
-            // Trigger animations
-            document.querySelectorAll('.fade-in').forEach(el => {
-                setTimeout(() => el.classList.add('active'), 100);
-            });
+        // WhatsApp button tracking
+        document.querySelector('.whatsapp-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('WhatsApp consultation clicked - potential lead generation');
         });
     </script>
 </body>
