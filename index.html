@@ -65,10 +65,14 @@
 
         .nav {
             min-height: 64px;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            justify-content: space-between;
-            gap: 24px;
+            gap: 18px;
+        }
+
+        .nav-spacer {
+            min-width: 1px;
         }
 
         .brand {
@@ -78,6 +82,7 @@
             text-decoration: none;
             font-weight: 800;
             letter-spacing: 0;
+            justify-self: center;
         }
 
         .brand-mark {
@@ -93,11 +98,14 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 26px;
+            justify-content: flex-end;
+            gap: 16px;
             list-style: none;
             color: var(--muted);
-            font-size: 0.94rem;
-            font-weight: 650;
+            font-size: 0.72rem;
+            font-weight: 750;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
         }
 
         .nav-links a {
@@ -111,7 +119,7 @@
         .nav-phone {
             border: 1px solid var(--line);
             border-radius: 999px;
-            padding: 9px 14px;
+            padding: 7px 10px;
             color: var(--ink);
             background: var(--white);
         }
@@ -268,9 +276,28 @@
             border-color: var(--forest);
         }
 
+        .bot-field {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
         .address-bar .button {
             min-width: 190px;
             height: 52px;
+        }
+
+        .address-bar .status {
+            grid-column: 1 / -1;
+            margin-top: 0;
+        }
+
+        button:disabled {
+            cursor: wait;
+            opacity: 0.72;
         }
 
         .section {
@@ -593,6 +620,15 @@
             display: block;
         }
 
+        .status.success {
+            background: rgba(31, 91, 69, 0.12);
+        }
+
+        .status.error {
+            background: rgba(170, 48, 38, 0.12);
+            color: #7a241b;
+        }
+
         @media (max-width: 960px) {
             .nav-links {
                 display: none;
@@ -666,6 +702,7 @@
 <body>
     <header class="site-header">
         <div class="container nav">
+            <div class="nav-spacer" aria-hidden="true"></div>
             <a class="brand" href="#">
                 <span class="brand-mark" aria-hidden="true"></span>
                 <span>New Horizons</span>
@@ -695,12 +732,14 @@
 
         <section id="start" class="quick-start" aria-label="Start your consultation">
             <div class="container">
-                <form class="address-bar" data-lead-form>
+                <form class="address-bar" data-lead-form data-form-type="quick_address">
+                    <input class="bot-field" name="company_website" type="text" tabindex="-1" autocomplete="off">
                     <div class="field">
                         <label for="quick-address">Property address</label>
                         <input id="quick-address" name="address" type="text" placeholder="123 Main St, City, State" autocomplete="street-address" required>
                     </div>
                     <button class="button" type="submit">Get my options</button>
+                    <div class="status" role="status" aria-live="polite"></div>
                 </form>
             </div>
         </section>
@@ -722,22 +761,6 @@
                 <div class="promise">
                     <strong>No obligation</strong>
                     <span>A conversation and offer should not trap you into a decision.</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container split">
-                <div>
-                    <span class="section-kicker">The New Horizons difference</span>
-                    <h2>Less sales pitch. More clear next step.</h2>
-                </div>
-                <div class="story-panel">
-                    <p>Most cash-buyer websites make every house sound like the same emergency. Real life is more complicated. Maybe the property needs work. Maybe you inherited it. Maybe listing could make more money, but the time, repairs, and showings are not realistic right now. Our job is to help you see the tradeoffs clearly.</p>
-                    <div class="note">
-                        <strong>Our point of view</strong>
-                        <p>A cash offer is not right for every seller. It is right when speed, certainty, privacy, or avoiding repairs matters more than squeezing every possible dollar out of a traditional listing.</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -837,46 +860,11 @@
             </div>
         </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-kicker">Seller situations</span>
-                    <h2>Built for homes with real-life complications.</h2>
-                </div>
-                <div class="situation-grid">
-                    <article class="situation">
-                        <h3>Inherited property</h3>
-                        <p>When family, distance, paperwork, and repairs all stack up at once.</p>
-                    </article>
-                    <article class="situation">
-                        <h3>Major repairs</h3>
-                        <p>When roof, foundation, plumbing, cleanup, or code issues make listing hard.</p>
-                    </article>
-                    <article class="situation">
-                        <h3>Rental headaches</h3>
-                        <p>When tenants, vacancy, damage, or burnout make ownership feel heavy.</p>
-                    </article>
-                    <article class="situation">
-                        <h3>Relocation</h3>
-                        <p>When you need to move before a traditional sale has time to finish.</p>
-                    </article>
-                    <article class="situation">
-                        <h3>Privacy concerns</h3>
-                        <p>When showings, photos, open houses, and neighborhood attention are not welcome.</p>
-                    </article>
-                    <article class="situation">
-                        <h3>Carrying costs</h3>
-                        <p>When taxes, insurance, utilities, or payments are eating into your next chapter.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <section id="faq" class="section">
             <div class="container">
                 <div class="section-header">
                     <span class="section-kicker">Questions</span>
-                    <h2>The things sellers actually ask.</h2>
+                    <h2>Commonly Asked Questions</h2>
                 </div>
                 <div class="faq-grid">
                     <article class="faq-item">
@@ -889,7 +877,7 @@
                     </article>
                     <article class="faq-item">
                         <h3>How fast can closing happen?</h3>
-                        <p>That depends on title, local requirements, and your situation. If everything is clear, cash sales can often move much faster than financed deals.</p>
+                        <p>That depends on title, local requirements, and your situation. If everything is clear, as soon as 14 days.</p>
                     </article>
                     <article class="faq-item">
                         <h3>Am I committed after requesting options?</h3>
@@ -902,15 +890,16 @@
         <section id="contact" class="section">
             <div class="container contact-wrap">
                 <div>
-                    <span class="section-kicker">Start here</span>
-                    <h2>Tell us what is going on with the house.</h2>
-                    <p class="lead">Share only what you know. A member of the New Horizons team will follow up with next steps, not a hard sell.</p>
+                    <span class="section-kicker">Get your offer</span>
+                    <h2>Ready for a clear cash offer?</h2>
+                    <p class="lead">Send us the basics and we will review the property as-is, with no repairs, showings, or seller-side commissions required.</p>
                     <div class="note">
                         <strong>Prefer to call?</strong>
                         <p><a href="tel:5551234567">(555) 123-4567</a></p>
                     </div>
                 </div>
-                <form class="contact-card" data-lead-form>
+                <form class="contact-card" data-lead-form data-form-type="full_contact">
+                    <input class="bot-field" name="company_website" type="text" tabindex="-1" autocomplete="off">
                     <div class="form-grid">
                         <div class="field">
                             <label for="name">Full name</label>
@@ -949,9 +938,9 @@
                             <textarea id="message" name="message" placeholder="Inherited home, repairs, tenants, relocation, payoff amount, or anything else that matters."></textarea>
                         </div>
                     </div>
-                    <p class="form-note">This form is currently a local prototype. Hook it to your CRM or form service before launch.</p>
+                    <p class="form-note">Your information goes directly to the New Horizons team for follow-up.</p>
                     <button class="button" type="submit">Request my options</button>
-                    <div class="status" role="status" aria-live="polite">Thanks. This prototype captured your request locally.</div>
+                    <div class="status" role="status" aria-live="polite"></div>
                 </form>
             </div>
         </section>
@@ -1003,17 +992,7 @@
                 }
             });
         });
-
-        document.querySelectorAll("[data-lead-form]").forEach((form) => {
-            form.addEventListener("submit", (event) => {
-                event.preventDefault();
-                const status = form.querySelector(".status");
-                if (status) {
-                    status.classList.add("show");
-                }
-                form.querySelector("button[type='submit']").textContent = "Request received";
-            });
-        });
     </script>
+    <script src="js/leads.js"></script>
 </body>
 </html>
