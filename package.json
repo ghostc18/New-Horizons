@@ -1,0 +1,13 @@
+{
+  "name": "new-horizons-website",
+  "version": "1.0.0",
+  "description": "New Horizons Real Estate Wholesale Website",
+  "scripts": {
+    "dev": "concurrently \"postcss src/css/main.css --output-style=expanded --watch\" \"vite \"",
+    "build": "concurrently \"postcss src/css/main.css --output-style=compressed\" \"vite build\"",
+    "prod": "vite build \" --mode production\" && postcss src/css/main.css --output-style=compressed"
+  },
+  "keywords": ["real-estate", "website"],
+  "author": "Isaiah Rodriguez",
+  "license": "MIT"
+}

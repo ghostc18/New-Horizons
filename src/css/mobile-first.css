@@ -1,0 +1,327 @@
+/* =========================================
+   MOBILE-FIRST CSS ARCHITECTURE
+   ========================================= */
+
+/* === MOBILE BASE (320px - 480px) === */
+@media (max-width: 480px) {
+    :root {
+        --font-size-xs: 0.75rem;
+        --font-size-sm: 0.875rem;
+        --font-size-base: 1rem;
+        --font-size-lg: 1.125rem;
+        --font-size-xl: 1.25rem;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    .nav {
+        min-height: 56px;
+        padding: 0 12px;
+    }
+    
+    .hero {
+        min-height: 480px;
+        background-size: cover, 100% auto;
+        background-position: center, center bottom 20px;
+    }
+    
+    .hero-inner {
+        padding: 48px 0 56px;
+    }
+    
+    .hero h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
+        line-height: 1.1;
+    }
+    
+    .hero-copy {
+        font-size: 0.9375rem;
+        margin-top: 16px;
+    }
+    
+    .button {
+        min-height: 44px;
+        padding: 12px 20px;
+        font-size: 0.9375rem;
+    }
+    
+    .quick-start {
+        margin-top: -40px;
+        padding: 0 12px;
+    }
+    
+    .address-bar {
+        padding: 14px;
+        border-radius: 12px;
+    }
+    
+    .option-grid,
+    .situation-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .promise-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .split {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .steps {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+/* === SMALL TABLET (481px - 768px) === */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        padding: 0 24px;
+    }
+    
+    .nav {
+        min-height: 64px;
+    }
+    
+    .hero {
+        min-height: 560px;
+    }
+    
+    .hero-inner {
+        padding: 64px 0 72px;
+    }
+    
+    .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+    
+    .option-grid,
+    .situation-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    .promise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+/* === LARGE TABLET/DESKTOP (769px+) === */
+@media (min-width: 769px) {
+    .container {
+        padding: 0 32px;
+    }
+    
+    .nav {
+        min-height: 72px;
+        padding: 0 24px;
+    }
+    
+    .hero {
+        min-height: 680px;
+    }
+    
+    .hero-inner {
+        padding: 72px 0 78px;
+    }
+    
+    .hero h1 {
+        font-size: clamp(3rem, 4.5vw, 6rem);
+    }
+    
+    .option-grid,
+    .situation-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+    }
+    
+    .promise-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .steps {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}
+
+/* === TOUCH TARGETS (Global) === */
+.button,
+.nav a,
+.option,
+.situation,
+.step,
+.faq-item {
+    position: relative;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .button,
+    .nav a,
+    .nav-phone,
+    .nav-cta {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav-links {
+        gap: 8px;
+    }
+}
+
+/* === HIGH CONTRAST === */
+@media (prefers-contrast: high) {
+    :root {
+        --ink: #000000;
+        --muted: #333333;
+        --line: #cccccc;
+        --paper: #ffffff;
+    }
+    
+    .button {
+        border-width: 2px;
+        border-color: currentColor;
+    }
+}
+
+/* === REDUCE MOTION === */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* === CSS CUSTOM PROPERTIES FOR EASIER MAINTENANCE === */
+:root {
+    /* Colors */
+    --ink: #17251f;
+    --muted: #5f685f;
+    --line: #ead8c4;
+    --paper: #fffaf3;
+    --white: #ffffff;
+    --field: #fff1e3;
+    --forest: #17634f;
+    --forest-dark: #0f4538;
+    --orange: #e46f2b;
+    --orange-dark: #b95022;
+    
+    /* Spacing */
+    --radius: 8px;
+    --max-width: 1180px;
+    --section-padding: 76px;
+    
+    /* Typography */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-serif: Georgia, 'Times New Roman', serif;
+}
+
+/* === MOBILE-FIRST UTILITY CLASSES === */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--forest);
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Hide desktop elements on mobile */
+.desktop-only {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .desktop-only {
+        display: block;
+    }
+    .mobile-only {
+        display: none;
+    }
+}
+
+/* === FOCUS STYLES FOR ACCESSIBILITY === */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--forest);
+    outline-offset: 2px;
+}
+
+/* === VISUAL SELECTION === */
+::selection {
+    background: var(--forest);
+    color: white;
+}
+
+/* === PERFORMANCE OPTIMIZATIONS === */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* === RESPONSIVE IMAGE HANDLING === */
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .hero-image {
+        content: url('images/sold-home-illustration-mobile.png');
+    }
+}
+
+/* === SMOOTH SCROLLING (with reduced motion override) === */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* === PREVENT OVERFLOW ISSUES === */
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* === SAFE AREA FOR MOBILE NOTCHES === */
+@media (display-mode: standalone) {
+    .app-viewport {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
