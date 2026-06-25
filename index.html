@@ -7,18 +7,17 @@
     <meta name="description" content="New Horizons helps homeowners compare practical selling options, including as-is cash offers, clear timelines, and no-pressure consultations.">
     <style>
         :root {
-            --ink: #18212d;
-            --muted: #5b6472;
-            --line: #d9ded7;
-            --paper: #fbfaf6;
+            --ink: #17251f;
+            --muted: #5f685f;
+            --line: #ead8c4;
+            --paper: #fffaf3;
             --white: #ffffff;
-            --field: #f4f1e8;
-            --forest: #1f5b45;
-            --forest-dark: #173f32;
-            --clay: #a85735;
-            --gold: #dca34b;
-            --sky: #d7e7ed;
-            --shadow: 0 22px 60px rgba(24, 33, 45, 0.14);
+            --field: #fff1e3;
+            --forest: #17634f;
+            --forest-dark: #0f4538;
+            --orange: #e46f2b;
+            --orange-dark: #b95022;
+            --shadow: 0 22px 60px rgba(23, 99, 79, 0.13);
             --radius: 8px;
             --max: 1180px;
         }
@@ -37,8 +36,8 @@
             background: var(--paper);
             color: var(--ink);
             font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
+            font-size: 15px;
+            line-height: 1.55;
         }
 
         a {
@@ -59,13 +58,13 @@
             position: sticky;
             top: 0;
             z-index: 20;
-            background: rgba(251, 250, 246, 0.92);
-            border-bottom: 1px solid rgba(24, 33, 45, 0.08);
+            background: rgba(255, 250, 243, 0.92);
+            border-bottom: 1px solid rgba(228, 111, 43, 0.16);
             backdrop-filter: blur(16px);
         }
 
         .nav {
-            min-height: 72px;
+            min-height: 64px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -82,12 +81,12 @@
         }
 
         .brand-mark {
-            width: 38px;
-            height: 38px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             background:
                 linear-gradient(140deg, transparent 45%, rgba(255, 255, 255, 0.5) 46% 54%, transparent 55%),
-                linear-gradient(135deg, var(--forest), var(--gold));
+                linear-gradient(135deg, var(--forest), var(--orange));
             box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.34);
         }
 
@@ -119,13 +118,17 @@
 
         .hero {
             position: relative;
-            min-height: 760px;
+            min-height: 680px;
             display: grid;
-            align-items: end;
-            color: var(--white);
-            background:
-                linear-gradient(90deg, rgba(17, 31, 29, 0.92), rgba(17, 31, 29, 0.65) 42%, rgba(17, 31, 29, 0.18)),
-                url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1800&q=80") center/cover;
+            align-items: start;
+            color: var(--ink);
+            background-color: var(--paper);
+            background-image:
+                linear-gradient(90deg, rgba(255, 250, 243, 0.96), rgba(255, 250, 243, 0.82) 44%, rgba(255, 250, 243, 0.18)),
+                url("images/sold-home-illustration.png");
+            background-position: center, right 3vw bottom 30px;
+            background-size: cover, min(70vw, 1040px) auto;
+            background-repeat: no-repeat;
         }
 
         .hero::after {
@@ -140,7 +143,7 @@
         .hero-inner {
             position: relative;
             z-index: 1;
-            padding: 112px 0 92px;
+            padding: 72px 0 78px;
         }
 
         .eyebrow {
@@ -148,7 +151,7 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 22px;
-            color: rgba(255, 255, 255, 0.86);
+            color: var(--orange-dark);
             font-size: 0.78rem;
             font-weight: 800;
             letter-spacing: 0.12em;
@@ -159,23 +162,23 @@
             content: "";
             width: 36px;
             height: 2px;
-            background: var(--gold);
+            background: var(--orange);
         }
 
         .hero h1 {
-            max-width: 790px;
+            max-width: 720px;
             font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(3.5rem, 7vw, 7.7rem);
+            font-size: clamp(3rem, 5.8vw, 6.15rem);
             font-weight: 500;
             letter-spacing: 0;
             line-height: 0.94;
         }
 
         .hero-copy {
-            max-width: 660px;
-            margin-top: 28px;
-            color: rgba(255, 255, 255, 0.86);
-            font-size: clamp(1.08rem, 2vw, 1.32rem);
+            max-width: 620px;
+            margin-top: 22px;
+            color: var(--muted);
+            font-size: clamp(1rem, 1.65vw, 1.15rem);
         }
 
         .hero-actions {
@@ -183,22 +186,23 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 14px;
-            margin-top: 34px;
+            margin-top: 28px;
         }
 
         .button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-height: 48px;
+            min-height: 44px;
             border: 1px solid transparent;
             border-radius: 999px;
-            padding: 13px 20px;
+            padding: 11px 18px;
             color: var(--white);
             background: var(--forest);
             font-weight: 800;
             text-decoration: none;
             cursor: pointer;
+            box-shadow: 0 10px 24px rgba(23, 99, 79, 0.18);
             transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
         }
 
@@ -208,13 +212,13 @@
         }
 
         .button.secondary {
-            color: var(--white);
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.34);
+            color: var(--forest-dark);
+            background: rgba(255, 241, 227, 0.78);
+            border-color: rgba(228, 111, 43, 0.34);
         }
 
         .button.secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--white);
         }
 
         .quick-start {
@@ -230,7 +234,7 @@
             align-items: end;
             padding: 18px;
             background: var(--white);
-            border: 1px solid rgba(24, 33, 45, 0.08);
+            border: 1px solid rgba(228, 111, 43, 0.16);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
         }
@@ -270,16 +274,16 @@
         }
 
         .section {
-            padding: 92px 0;
+            padding: 76px 0;
         }
 
         .section-header {
-            max-width: 760px;
-            margin-bottom: 36px;
+            max-width: 720px;
+            margin-bottom: 30px;
         }
 
         .section-kicker {
-            color: var(--clay);
+            color: var(--orange-dark);
             font-size: 0.78rem;
             font-weight: 850;
             letter-spacing: 0.12em;
@@ -289,22 +293,22 @@
         h2 {
             margin-top: 10px;
             font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(2.25rem, 4vw, 4.6rem);
+            font-size: clamp(1.9rem, 3.25vw, 3.65rem);
             font-weight: 500;
             letter-spacing: 0;
             line-height: 1;
         }
 
         .lead {
-            margin-top: 16px;
+            margin-top: 14px;
             color: var(--muted);
-            font-size: 1.12rem;
+            font-size: 1.02rem;
         }
 
         .promise-band {
             background: var(--forest-dark);
             color: var(--white);
-            padding: 38px 0;
+            padding: 30px 0;
         }
 
         .promise-grid {
@@ -316,8 +320,8 @@
         }
 
         .promise {
-            min-height: 138px;
-            padding: 24px;
+            min-height: 120px;
+            padding: 20px;
             background: var(--forest-dark);
         }
 
@@ -335,23 +339,23 @@
         .split {
             display: grid;
             grid-template-columns: minmax(0, 0.96fr) minmax(320px, 0.72fr);
-            gap: 56px;
+            gap: 44px;
             align-items: start;
         }
 
         .story-panel {
-            border-left: 4px solid var(--gold);
+            border-left: 4px solid var(--orange);
             padding: 10px 0 10px 24px;
         }
 
         .story-panel p {
             color: var(--muted);
-            font-size: 1.08rem;
+            font-size: 1rem;
         }
 
         .note {
-            margin-top: 28px;
-            padding: 24px;
+            margin-top: 22px;
+            padding: 20px;
             background: var(--field);
             border: 1px solid var(--line);
             border-radius: var(--radius);
@@ -389,14 +393,14 @@
             border-radius: 50%;
             background:
                 linear-gradient(135deg, transparent 39%, var(--white) 40% 52%, transparent 53%),
-                var(--forest);
+                var(--orange);
         }
 
         .option-grid,
         .situation-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+            gap: 16px;
         }
 
         .option,
@@ -404,17 +408,17 @@
         .step,
         .faq-item {
             background: var(--white);
-            border: 1px solid rgba(24, 33, 45, 0.1);
+            border: 1px solid rgba(228, 111, 43, 0.14);
             border-radius: var(--radius);
-            padding: 28px;
-            box-shadow: 0 10px 34px rgba(24, 33, 45, 0.06);
+            padding: 24px;
+            box-shadow: 0 10px 34px rgba(23, 99, 79, 0.07);
         }
 
         .option .label {
             display: inline-block;
-            margin-bottom: 18px;
+            margin-bottom: 14px;
             border-radius: 999px;
-            padding: 7px 11px;
+            padding: 6px 10px;
             background: var(--field);
             color: var(--forest);
             font-size: 0.78rem;
@@ -428,7 +432,7 @@
         .step h3,
         .faq-item h3 {
             margin-bottom: 10px;
-            font-size: 1.22rem;
+            font-size: 1.08rem;
             line-height: 1.25;
         }
 
@@ -442,34 +446,35 @@
         .steps {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
+            gap: 16px;
             counter-reset: step;
         }
 
         .step {
             position: relative;
-            min-height: 250px;
-            padding-top: 78px;
+            min-height: 220px;
+            padding-top: 68px;
             counter-increment: step;
         }
 
         .step::before {
             content: counter(step);
             position: absolute;
-            top: 24px;
-            left: 28px;
+            top: 20px;
+            left: 24px;
             display: grid;
             place-items: center;
-            width: 38px;
-            height: 38px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             background: var(--forest);
+            box-shadow: 0 0 0 5px rgba(228, 111, 43, 0.12);
             color: var(--white);
             font-weight: 850;
         }
 
         .contrast {
-            background: var(--ink);
+            background: linear-gradient(135deg, var(--forest-dark), #123529);
             color: var(--white);
         }
 
@@ -514,7 +519,7 @@
 
         .contact-card {
             background: var(--white);
-            border: 1px solid rgba(24, 33, 45, 0.1);
+            border: 1px solid rgba(228, 111, 43, 0.14);
             border-radius: var(--radius);
             padding: 28px;
             box-shadow: var(--shadow);
@@ -579,7 +584,7 @@
             margin-top: 16px;
             border-radius: var(--radius);
             padding: 12px 14px;
-            background: rgba(31, 91, 69, 0.1);
+            background: rgba(228, 111, 43, 0.12);
             color: var(--forest-dark);
             font-weight: 750;
         }
@@ -594,7 +599,9 @@
             }
 
             .hero {
-                min-height: 680px;
+                min-height: 620px;
+                background-position: center, right -60px bottom 28px;
+                background-size: cover, min(84vw, 840px) auto;
             }
 
             .address-bar,
@@ -610,7 +617,6 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .option-grid,
             .situation-grid,
             .faq-grid {
                 grid-template-columns: 1fr;
@@ -627,15 +633,17 @@
             }
 
             .hero {
-                min-height: 650px;
+                min-height: 580px;
+                background-position: center, center bottom 18px;
+                background-size: cover, 124vw auto;
             }
 
             .hero-inner {
-                padding: 82px 0 88px;
+                padding: 48px 0 76px;
             }
 
             .hero h1 {
-                font-size: 3.35rem;
+                font-size: 2.72rem;
             }
 
             .hero-actions,
@@ -650,7 +658,7 @@
             }
 
             .section {
-                padding: 68px 0;
+                padding: 56px 0;
             }
         }
     </style>
@@ -665,7 +673,7 @@
             <ul class="nav-links" aria-label="Primary navigation">
                 <li><a href="#options">Your Options</a></li>
                 <li><a href="#process">Process</a></li>
-                <li><a href="#trust">Trust</a></li>
+                <li><a href="#trust">Our Standard</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a class="nav-phone" href="tel:5551234567">(555) 123-4567</a></li>
             </ul>
@@ -676,11 +684,11 @@
         <section class="hero">
             <div class="container hero-inner">
                 <span class="eyebrow">Cash offer guidance for real homeowners</span>
-                <h1>A clear way forward when selling the usual way does not fit.</h1>
-                <p class="hero-copy">We help you compare your practical selling options, including an as-is cash offer, without repairs, showings, or pressure to decide before you are ready.</p>
+                <h1>Your House. Your Timeline. A Clear Cash Offer.</h1>
+                <p class="hero-copy">Sell as-is with no repairs, no showings, and no seller-side commissions. We give you a straightforward cash offer and let you decide if it works.</p>
                 <div class="hero-actions">
                     <a class="button" href="#start">Start with your address</a>
-                    <a class="button secondary" href="#trust">See what we will and will not do</a>
+                    <a class="button secondary" href="#trust">See our standard</a>
                 </div>
             </div>
         </section>
@@ -753,6 +761,16 @@
                         <p>Best when the home is market-ready, you have time, and want full exposure to retail buyers.</p>
                     </article>
                     <article class="option">
+                        <span class="label">Do-it-yourself</span>
+                        <h3>For sale by owner</h3>
+                        <p>Can save on listing commission and gives you control, but you handle pricing, marketing, showings, negotiation, contracts, and buyer financing risk yourself.</p>
+                    </article>
+                    <article class="option">
+                        <span class="label">Traditional</span>
+                        <h3>List with a Realtor</h3>
+                        <p>Can bring wider market exposure and professional guidance, but usually includes commissions, showings, repairs, longer timelines, and buyer contingencies.</p>
+                    </article>
+                    <article class="option">
                         <span class="label">Control</span>
                         <h3>Keep or delay the sale</h3>
                         <p>Sometimes the better move is waiting, renting, refinancing, or solving one urgent issue first.</p>
@@ -792,27 +810,27 @@
         <section id="trust" class="section contrast">
             <div class="container split">
                 <div>
-                    <span class="section-kicker">Trust section</span>
-                    <h2>What we will and will not do.</h2>
-                    <p class="lead">This industry has earned some skepticism. We would rather address that directly than bury it under badges.</p>
+                    <span class="section-kicker">Our Promise</span>
+                    <h2>The New Horizons Standard</h2>
+                    <p class="lead">A cash sale should be clear, respectful, and easy to understand before you make a decision.</p>
                 </div>
                 <div class="compare">
                     <div class="compare-panel">
-                        <h3>We will</h3>
+                        <h3>Clear from the start</h3>
                         <ul>
-                            <li>Explain how we reached the offer.</li>
-                            <li>Put important numbers in writing.</li>
-                            <li>Let you compare our offer with other paths.</li>
-                            <li>Respect a no without chasing you endlessly.</li>
+                            <li>A straightforward cash offer in writing.</li>
+                            <li>No seller-side commissions.</li>
+                            <li>No repairs, cleanup, or prep required.</li>
+                            <li>A closing timeline built around your move.</li>
                         </ul>
                     </div>
                     <div class="compare-panel">
-                        <h3>We will not</h3>
+                        <h3>Pressure kept out</h3>
                         <ul>
-                            <li>Tell you every cash offer beats listing.</li>
-                            <li>Hide fees or pressure you to sign immediately.</li>
-                            <li>Ask you to repair the house before we talk.</li>
-                            <li>Use fake urgency or fake viewer counters.</li>
+                            <li>No open houses or repeated showings.</li>
+                            <li>No fake urgency or countdown tactics.</li>
+                            <li>No obligation after you see the offer.</li>
+                            <li>No chasing you if the offer is not right.</li>
                         </ul>
                     </div>
                 </div>
