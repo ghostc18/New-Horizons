@@ -12,6 +12,9 @@ const HEADERS = [
   "Timeline",
   "Condition",
   "Message",
+  "SMS Consent",
+  "SMS Consent Timestamp",
+  "SMS Consent Language",
   "Page URL",
   "Source",
   "User Agent"
@@ -48,6 +51,9 @@ function appendLeadRow_(data) {
     data.timeline || "",
     data.condition || "",
     data.message || "",
+    data.sms_consent || "",
+    data.sms_consent_timestamp || "",
+    data.sms_consent_language || "",
     data.page_url || "",
     data.source || "",
     data.user_agent || ""
@@ -65,6 +71,8 @@ function notifyBusiness_(data) {
     `Address: ${data.address || ""}`,
     `Timeline: ${data.timeline || ""}`,
     `Condition: ${data.condition || ""}`,
+    `SMS Consent: ${data.sms_consent || ""}`,
+    `SMS Consent Timestamp: ${data.sms_consent_timestamp || ""}`,
     "",
     "Message:",
     data.message || "",
@@ -121,9 +129,26 @@ function getLeadSheet_() {
   if (sheet.getLastRow() === 0) {
     sheet.appendRow(HEADERS);
     sheet.setFrozenRows(1);
+  } else {
+    ensureHeaders_(sheet);
   }
 
   return sheet;
+}
+
+function ensureHeaders_(sheet) {
+  const existingHeaders = sheet
+    .getRange(1, 1, 1, Math.max(sheet.getLastColumn(), 1))
+    .getValues()[0]
+    .filter(String);
+
+  const missingHeaders = HEADERS.filter(header => existingHeaders.indexOf(header) === -1);
+
+  if (missingHeaders.length) {
+    sheet
+      .getRange(1, existingHeaders.length + 1, 1, missingHeaders.length)
+      .setValues([missingHeaders]);
+  }
 }
 
 function json_(payload) {

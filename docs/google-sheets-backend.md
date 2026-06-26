@@ -37,6 +37,9 @@ The EmailJS templates should support these variables:
 - `timeline`
 - `condition`
 - `message`
+- `sms_consent`
+- `sms_consent_timestamp`
+- `sms_consent_language`
 - `lead_date`
 - `page_url`
 - `source`
@@ -88,6 +91,22 @@ The Apps Script backend also sends owner and customer emails through Google if y
 - Timeline
 - Condition
 - Message
+- SMS Consent
+- SMS Consent Timestamp
+- SMS Consent Language
 - Page URL
 - Source
 - User Agent
+
+## A2P / SMS Consent Notes
+
+The full contact form includes a required, unchecked SMS consent checkbox. The language includes message frequency, message/data rates, STOP, HELP, and states that consent is not a condition of purchase.
+
+The site also includes bottom-page `Privacy Policy` and `SMS Terms` sections. The privacy policy states that mobile opt-in data and SMS consent are not shared with third parties or affiliates for marketing or promotional purposes.
+
+For campaign registration, use screenshots or page URLs showing:
+
+- The phone field.
+- The unchecked SMS consent checkbox.
+- The linked Privacy Policy and SMS Terms.
+- The bottom-page privacy language.

@@ -43,6 +43,11 @@ function formDataToObject(form) {
     lead.source = document.referrer || "direct";
     lead.user_agent = navigator.userAgent;
     lead.lead_date = new Date().toLocaleString();
+    lead.sms_consent = lead.sms_consent || "No";
+    lead.sms_consent_timestamp = lead.sms_consent === "Yes" ? new Date().toISOString() : "";
+    lead.sms_consent_language = lead.sms_consent === "Yes"
+        ? "I agree to receive text messages from New Horizons about my property request at the phone number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out and HELP for help. Consent is not a condition of purchase."
+        : "";
     lead.business_name = "New Horizons";
     lead.to_email = LEAD_CONFIG.emailjs.businessEmail;
     lead.reply_to = lead.email || LEAD_CONFIG.emailjs.businessEmail;

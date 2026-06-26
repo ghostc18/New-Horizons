@@ -607,6 +607,35 @@
             grid-column: 1 / -1;
         }
 
+        .consent-field {
+            display: grid;
+            grid-template-columns: 20px 1fr;
+            gap: 12px;
+            align-items: start;
+            padding: 14px;
+            background: var(--field);
+            border: 1px solid rgba(228, 111, 43, 0.2);
+            border-radius: var(--radius);
+        }
+
+        .consent-field input {
+            width: 18px;
+            height: 18px;
+            margin-top: 3px;
+            accent-color: var(--forest);
+        }
+
+        .consent-field label {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.45;
+        }
+
+        .consent-field a {
+            color: var(--forest-dark);
+            font-weight: 800;
+        }
+
         textarea {
             min-height: 120px;
             resize: vertical;
@@ -622,6 +651,35 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 18px;
+        }
+
+        .legal-section {
+            padding: 56px 0;
+            background: var(--white);
+            border-top: 1px solid rgba(228, 111, 43, 0.16);
+        }
+
+        .legal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .legal-block h2 {
+            font-size: clamp(1.55rem, 2.5vw, 2.45rem);
+        }
+
+        .legal-block p,
+        .legal-block li {
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .legal-block ul {
+            display: grid;
+            gap: 8px;
+            margin-top: 14px;
+            padding-left: 18px;
         }
 
         .site-footer {
@@ -699,7 +757,8 @@
             }
 
             .situation-grid,
-            .faq-grid {
+            .faq-grid,
+            .legal-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -969,6 +1028,12 @@
                             <label for="phone">Phone</label>
                             <input id="phone" name="phone" type="tel" autocomplete="tel" required>
                         </div>
+                        <div class="field full consent-field">
+                            <input id="sms-consent" name="sms_consent" type="checkbox" value="Yes" required>
+                            <label for="sms-consent">
+                                I agree to receive text messages from New Horizons about my property request at the phone number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out and HELP for help. Consent is not a condition of purchase. See our <a href="#privacy">Privacy Policy</a> and <a href="#sms-terms">SMS Terms</a>.
+                            </label>
+                        </div>
                         <div class="field full">
                             <label for="email">Email</label>
                             <input id="email" name="email" type="email" autocomplete="email" required>
@@ -1008,6 +1073,35 @@
                 </form>
             </div>
         </section>
+
+        <section id="privacy" class="legal-section">
+            <div class="container legal-grid">
+                <div class="legal-block">
+                    <span class="section-kicker">Privacy Policy</span>
+                    <h2>Your information stays with us.</h2>
+                    <p>New Horizons collects the information you submit through this website so we can respond to your property request, prepare a cash offer, schedule follow-up, and communicate with you about your inquiry.</p>
+                    <ul>
+                        <li>Information collected may include your name, phone number, email address, property address, timeline, property condition, and message details.</li>
+                        <li>We use your information to contact you by phone, email, and text message when you give consent.</li>
+                        <li>We do not sell or rent your personal information.</li>
+                        <li>Mobile opt-in data and SMS consent are not shared with third parties or affiliates for their marketing or promotional purposes.</li>
+                        <li>We may share information with service providers only when needed to operate this website, manage leads, send communications, or complete a requested transaction.</li>
+                    </ul>
+                </div>
+                <div id="sms-terms" class="legal-block">
+                    <span class="section-kicker">SMS Terms</span>
+                    <h2>Text message consent.</h2>
+                    <p>By checking the SMS consent box and submitting the form, you authorize New Horizons to send text messages related to your property request. Consent is not required to make a purchase or receive a cash offer.</p>
+                    <ul>
+                        <li>Message frequency varies based on your request and follow-up needs.</li>
+                        <li>Message and data rates may apply.</li>
+                        <li>Reply STOP to opt out of SMS messages at any time.</li>
+                        <li>Reply HELP for help or contact us at <a href="tel:5551234567">(555) 123-4567</a>.</li>
+                        <li>Opting out of text messages does not prevent us from contacting you by other methods you provided, unless you ask us not to.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
@@ -1025,6 +1119,8 @@
                     <li><a href="#process">Process</a></li>
                     <li><a href="#trust">Trust</a></li>
                     <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#sms-terms">SMS Terms</a></li>
                 </ul>
             </div>
             <div>
