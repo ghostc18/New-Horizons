@@ -1,4 +1,6 @@
 const SHEET_NAME = "Leads";
+const BUSINESS_EMAIL = "isaiahjrod5@gmail.com";
+const BUSINESS_NAME = "New Horizons";
 
 const HEADERS = [
   "Submitted At",
@@ -16,12 +18,25 @@ const HEADERS = [
 ];
 
 function doPost(e) {
-  const sheet = getLeadSheet_();
   const data = e && e.parameter ? e.parameter : {};
 
   if (data.company_website) {
     return json_({ ok: true });
   }
+
+  appendLeadRow_(data);
+  notifyBusiness_(data);
+  notifyCustomer_(data);
+
+  return json_({ ok: true });
+}
+
+function doGet() {
+  return json_({ ok: true, service: "New Horizons lead intake" });
+}
+
+function appendLeadRow_(data) {
+  const sheet = getLeadSheet_();
 
   sheet.appendRow([
     new Date(),
@@ -37,12 +52,62 @@ function doPost(e) {
     data.source || "",
     data.user_agent || ""
   ]);
-
-  return json_({ ok: true });
 }
 
-function doGet() {
-  return json_({ ok: true, service: "New Horizons lead intake" });
+function notifyBusiness_(data) {
+  const subject = "New Horizons lead request";
+  const body = [
+    "A new lead request was submitted.",
+    "",
+    `Name: ${data.name || ""}`,
+    `Phone: ${data.phone || ""}`,
+    `Email: ${data.email || ""}`,
+    `Address: ${data.address || ""}`,
+    `Timeline: ${data.timeline || ""}`,
+    `Condition: ${data.condition || ""}`,
+    "",
+    "Message:",
+    data.message || "",
+    "",
+    `Page URL: ${data.page_url || ""}`,
+    `Source: ${data.source || ""}`
+  ].join("\n");
+
+  MailApp.sendEmail({
+    to: BUSINESS_EMAIL,
+    subject,
+    body,
+    replyTo: data.email || BUSINESS_EMAIL,
+    name: BUSINESS_NAME
+  });
+}
+
+function notifyCustomer_(data) {
+  if (!data.email) {
+    return;
+  }
+
+  const subject = "We received your New Horizons request";
+  const body = [
+    `Hi ${data.name || "there"},`,
+    "",
+    "Thank you for reaching out to New Horizons. We received your request and someone from our team will reach out soon to talk through your property and next steps.",
+    "",
+    "Here is what you shared:",
+    `Property address: ${data.address || ""}`,
+    `Timeline: ${data.timeline || "Not sure yet"}`,
+    `Condition: ${data.condition || "Not sure yet"}`,
+    "",
+    "New Horizons"
+  ].join("\n");
+
+  MailApp.sendEmail({
+    to: data.email,
+    subject,
+    body,
+    replyTo: BUSINESS_EMAIL,
+    name: BUSINESS_NAME
+  });
 }
 
 function getLeadSheet_() {

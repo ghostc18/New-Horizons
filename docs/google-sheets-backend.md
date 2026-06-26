@@ -1,8 +1,48 @@
-# Google Sheets Lead Backend
+# Lead Form Setup
 
-This site runs on GitHub Pages, so form submissions need an external receiver. The included Apps Script writes each lead into a Google Sheet.
+The site is static, so the form needs two external services:
 
-## 1. Create the sheet
+- EmailJS for website email notifications.
+- Google Apps Script for saving leads to Google Sheets.
+
+Successful full-form submissions redirect to `thank-you.html`.
+
+## 1. EmailJS
+
+The website uses `js/leads.js`.
+
+Current values:
+
+```js
+serviceId: "service_xgvc5pa"
+businessTemplateId: "template_7f7aqwc"
+publicKey: "EisHia78uRV6zncJE"
+businessEmail: "isaiahjrod5@gmail.com"
+```
+
+To send the seller an automatic confirmation email, create a second EmailJS template and paste its ID here:
+
+```js
+customerTemplateId: "YOUR_CUSTOMER_TEMPLATE_ID"
+```
+
+The EmailJS templates should support these variables:
+
+- `to_email`
+- `reply_to`
+- `name`
+- `phone`
+- `email`
+- `address`
+- `timeline`
+- `condition`
+- `message`
+- `lead_date`
+- `page_url`
+- `source`
+- `subject`
+
+## 2. Google Sheet
 
 1. Create a Google Sheet named `New Horizons Leads`.
 2. Open `Extensions` > `Apps Script`.
@@ -10,7 +50,7 @@ This site runs on GitHub Pages, so form submissions need an external receiver. T
 4. Paste the code from `backend/google-apps-script.js`.
 5. Save the project.
 
-## 2. Deploy the web app
+## 3. Deploy The Apps Script Web App
 
 1. In Apps Script, click `Deploy` > `New deployment`.
 2. Choose type `Web app`.
@@ -18,26 +58,24 @@ This site runs on GitHub Pages, so form submissions need an external receiver. T
 4. Set `Who has access` to `Anyone`.
 5. Click `Deploy`.
 6. Authorize the script.
-7. Copy the Web app URL. It ends with `/exec`.
+7. Copy the Web app URL ending in `/exec`.
 
-## 3. Connect the website
+## 4. Connect The Website To The Sheet
 
-1. Open `js/leads.js`.
-2. Replace the empty endpoint value with your Apps Script Web app URL:
+Open `js/leads.js` and paste the Apps Script URL:
 
 ```js
-const LEAD_ENDPOINT_URL = "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec";
+spreadsheetEndpointUrl: "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec"
 ```
 
-3. Commit and push:
+## What Happens On Submit
 
-```powershell
-git add .
-git commit -m "Connect lead forms to Google Sheets"
-git push
-```
+1. The full form sends the business notification through EmailJS.
+2. If `customerTemplateId` is filled in, EmailJS sends the seller confirmation.
+3. If `spreadsheetEndpointUrl` is filled in, the lead posts to Google Sheets.
+4. The seller is redirected to `thank-you.html`.
 
-GitHub Pages will update automatically after the push.
+The Apps Script backend also sends owner and customer emails through Google if you use it. If you do not want duplicate emails, either leave `customerTemplateId` empty in `js/leads.js` or remove the `notifyBusiness_` / `notifyCustomer_` calls from `backend/google-apps-script.js`.
 
 ## Columns Captured
 

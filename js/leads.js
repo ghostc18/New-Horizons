@@ -1,18 +1,23 @@
-// EmailJS Lead Form Handler - Production Ready
-// Configure at emailjs.com with:
-// Service ID: service_xgvc5pa
-// Template ID: template_7f7aqwc  
-// Public Key: EisHia78uRV6zncJE
-
-const EMAILJS_CONFIG = {
-    serviceId: "service_xgvc5pa",
-    templateId: "template_7f7aqwc",
-    publicKey: "EisHia78uRV6zncJE",
-    senderEmail: "isaiahjrod5@gmail.com"
+const LEAD_CONFIG = {
+    emailjs: {
+        serviceId: "service_xgvc5pa",
+        businessTemplateId: "template_7f7aqwc",
+        customerTemplateId: "",
+        publicKey: "EisHia78uRV6zncJE",
+        businessEmail: "isaiahjrod5@gmail.com"
+    },
+    spreadsheetEndpointUrl: "https://script.google.com/macros/s/1I1MQfz2X3ocx2c3cHrIHpfxsMHlCjgxDmMVErmXCEfDEPE8eRAvihiXX/exec",
+    thankYouUrl: "thank-you.html"
 };
 
-// Initialize EmailJS
-emailjs.init(EMAILJS_CONFIG.publicKey);
+function hasEmailJsConfig() {
+    return Boolean(
+        window.emailjs &&
+        LEAD_CONFIG.emailjs.serviceId &&
+        LEAD_CONFIG.emailjs.businessTemplateId &&
+        LEAD_CONFIG.emailjs.publicKey
+    );
+}
 
 function setLeadStatus(form, message, state) {
     const status = form.querySelector(".status");
@@ -25,31 +30,82 @@ function setLeadStatus(form, message, state) {
     status.classList.add("show", state);
 }
 
-function serializeLeadForm(form) {
-    const data = new URLSearchParams();
+function formDataToObject(form) {
     const formData = new FormData(form);
+    const lead = {};
 
     formData.forEach((value, key) => {
-        data.append(key, value.toString().trim());
+        lead[key] = value.toString().trim();
     });
 
-    // Add metadata for the email template
-    data.append("form_type", form.dataset.formType || "lead");
-    data.append("page_url", window.location.href);
-    data.append("source", document.referrer || "direct");
-    data.append("user_agent", navigator.userAgent);
+    lead.form_type = form.dataset.formType || "lead";
+    lead.page_url = window.location.href;
+    lead.source = document.referrer || "direct";
+    lead.user_agent = navigator.userAgent;
+    lead.lead_date = new Date().toLocaleString();
+    lead.business_name = "New Horizons";
+    lead.to_email = LEAD_CONFIG.emailjs.businessEmail;
+    lead.reply_to = lead.email || LEAD_CONFIG.emailjs.businessEmail;
 
-    // Add lead timestamp
-    data.append("lead_date", new Date().toISOString());
-    data.append("business_name", "New Horizons Real Estate");
+    return lead;
+}
+
+function leadToSearchParams(lead) {
+    const data = new URLSearchParams();
+
+    Object.entries(lead).forEach(([key, value]) => {
+        data.append(key, value || "");
+    });
 
     return data;
 }
 
+async function sendEmailNotifications(lead) {
+    if (!hasEmailJsConfig()) {
+        throw new Error("EmailJS is not configured or the SDK did not load.");
+    }
+
+    window.emailjs.init({ publicKey: LEAD_CONFIG.emailjs.publicKey });
+
+    await window.emailjs.send(
+        LEAD_CONFIG.emailjs.serviceId,
+        LEAD_CONFIG.emailjs.businessTemplateId,
+        {
+            ...lead,
+            to_email: LEAD_CONFIG.emailjs.businessEmail,
+            subject: "New Horizons lead request"
+        }
+    );
+
+    if (LEAD_CONFIG.emailjs.customerTemplateId && lead.email) {
+        await window.emailjs.send(
+            LEAD_CONFIG.emailjs.serviceId,
+            LEAD_CONFIG.emailjs.customerTemplateId,
+            {
+                ...lead,
+                to_email: lead.email,
+                subject: "We received your New Horizons request"
+            }
+        );
+    }
+}
+
+async function sendLeadToSpreadsheet(lead) {
+    if (!LEAD_CONFIG.spreadsheetEndpointUrl) {
+        return;
+    }
+
+    await fetch(LEAD_CONFIG.spreadsheetEndpointUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: leadToSearchParams(lead)
+    });
+}
+
 async function submitLeadForm(form) {
-    // Validate EmailJS configuration
-    if (!EMAILJS_CONFIG.serviceId || !EMAILJS_CONFIG.templateId || !EMAILJS_CONFIG.publicKey) {
-        setLeadStatus(form, "Email service not configured. Please contact us directly at (555) 123-4567.", "error");
+    const lead = formDataToObject(form);
+
+    if (lead.company_website) {
         return;
     }
 
@@ -62,36 +118,16 @@ async function submitLeadForm(form) {
     }
 
     try {
-        // Send email using EmailJS
-        const result = await emailjs.sendForm(
-            EMAILJS_CONFIG.serviceId,
-            EMAILJS_CONFIG.templateId,
-            form
-        );
+        await Promise.all([
+            sendEmailNotifications(lead),
+            sendLeadToSpreadsheet(lead)
+        ]);
 
-        console.log("Email sent successfully:", result);
-        
-        // Success - reset form and show confirmation
-        form.reset();
-        setLeadStatus(form, "Thanks! We've received your request and will contact you shortly.", "success");
-        
+        window.location.href = LEAD_CONFIG.thankYouUrl;
     } catch (error) {
-        console.error("EmailJS Error:", error);
-        
-        // Handle specific EmailJS errors
-        let errorMessage = "Something went wrong. Please call us directly at (555) 123-4567.";
-        
-        if (error.text) {
-            if (error.text.includes("RATE_LIMIT_EXCEEDED")) {
-                errorMessage = "We're receiving a lot of requests right now. Please call us at (555) 123-4567 or try again in an hour.";
-            } else if (error.text.includes("INVALID_API_KEY")) {
-                errorMessage = "Service configuration error. Please contact us directly at (555) 123-4567.";
-            }
-        }
-        
-        setLeadStatus(form, errorMessage, "error");
-        
-    } finally {
+        console.error("Lead submission error:", error);
+        setLeadStatus(form, "Something went wrong. Please call us directly at (555) 123-4567 or try again in a moment.", "error");
+
         if (button) {
             button.disabled = false;
             button.textContent = originalText;
@@ -120,7 +156,6 @@ function continueToFullForm(form) {
     }, 450);
 }
 
-// Initialize all forms
 function initForms() {
     document.querySelectorAll("[data-lead-form]").forEach((form) => {
         form.addEventListener("submit", (event) => {
@@ -134,50 +169,10 @@ function initForms() {
             submitLeadForm(form);
         });
     });
-
-    // Initialize on DOM ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initForms);
-    } else {
-        initForms();
-    }
 }
 
-// Add CSS for form status messages
-const style = document.createElement('style');
-style.textContent = `
-.form-status {
-    display: none;
-    margin-top: 10px;
-    padding: 12px 16px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initForms);
+} else {
+    initForms();
 }
-
-.form-status.show {
-    display: block;
-}
-
-.form-status.success {
-    background: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-.form-status.error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-`;
-document.head.appendChild(style);
-
-// Initialize forms when page loads
-initForms();
-
-// Debug helper (remove in production)
-window.debugEmailJS = function() {
-    console.log("EmailJS Config:", EMAILJS_CONFIG);
-    console.log("EmailJS Initialized:", window.emailjs?.isInited);
-};
