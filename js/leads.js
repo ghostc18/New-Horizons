@@ -46,9 +46,9 @@ function formDataToObject(form) {
     lead.sms_consent = lead.sms_consent || "No";
     lead.sms_consent_timestamp = lead.sms_consent === "Yes" ? new Date().toISOString() : "";
     lead.sms_consent_language = lead.sms_consent === "Yes"
-        ? "I agree to receive text messages from HomeQuest Solutions about my property request at the phone number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out and HELP for help. Consent is not a condition of purchase."
+        ? "I agree to receive text messages from New Horizons about my property request at the phone number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out and HELP for help. Consent is not a condition of purchase."
         : "";
-    lead.business_name = "HomeQuest Solutions";
+    lead.business_name = "New Horizons";
     lead.to_email = LEAD_CONFIG.emailjs.businessEmail;
     lead.reply_to = lead.email || LEAD_CONFIG.emailjs.businessEmail;
 
@@ -78,7 +78,7 @@ async function sendEmailNotifications(lead) {
         {
             ...lead,
             to_email: LEAD_CONFIG.emailjs.businessEmail,
-            subject: "HomeQuest Solutions lead request"
+            subject: "New Horizons lead request"
         }
     );
 
@@ -89,7 +89,7 @@ async function sendEmailNotifications(lead) {
             {
                 ...lead,
                 to_email: lead.email,
-                subject: "We received your HomeQuest Solutions request"
+                subject: "We received your New Horizons request"
             }
         );
     }
