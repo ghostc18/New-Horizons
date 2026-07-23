@@ -1,6 +1,6 @@
 const SHEET_NAME = "Leads";
 const BUSINESS_EMAIL = "isaiahjrod5@gmail.com";
-const BUSINESS_NAME = "New Horizons";
+const BUSINESS_NAME = "HomeQuest Solutions";
 
 const HEADERS = [
   "Submitted At",
@@ -35,7 +35,7 @@ function doPost(e) {
 }
 
 function doGet() {
-  return json_({ ok: true, service: "New Horizons lead intake" });
+  return json_({ ok: true, service: "HomeQuest Solutions lead intake" });
 }
 
 function appendLeadRow_(data) {
@@ -61,7 +61,7 @@ function appendLeadRow_(data) {
 }
 
 function notifyBusiness_(data) {
-  const subject = "New Horizons lead request";
+  const subject = "HomeQuest Solutions lead request";
   const body = [
     "A new lead request was submitted.",
     "",
@@ -95,19 +95,19 @@ function notifyCustomer_(data) {
     return;
   }
 
-  const subject = "We received your New Horizons request";
-  const body = [
-    `Hi ${data.name || "there"},`,
-    "",
-    "Thank you for reaching out to New Horizons. We received your request and someone from our team will reach out soon to talk through your property and next steps.",
-    "",
-    "Here is what you shared:",
-    `Property address: ${data.address || ""}`,
-    `Timeline: ${data.timeline || "Not sure yet"}`,
-    `Condition: ${data.condition || "Not sure yet"}`,
-    "",
-    "New Horizons"
-  ].join("\n");
+  const subject = "We received your HomeQuest Solutions request";
+    const body = [
+      `Hi ${data.name || "there"}`,
+      "",
+      "Thank you for reaching out to HomeQuest Solutions. We received your request and someone from our team will reach out soon to talk through your property and next steps.",
+      "",
+      "Here is what you shared:",
+      `Property address: ${data.address || ""}`,
+      `Timeline: ${data.timeline || "Not sure yet"}`,
+      `Condition: ${data.condition || "Not sure yet"}`,
+      "",
+      "HomeQuest Solutions"
+    ].join("\n");
 
   MailApp.sendEmail({
     to: data.email,
