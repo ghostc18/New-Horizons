@@ -45,6 +45,7 @@
             width: min(280px, 70vw);
             height: auto;
             margin: 0 auto 28px;
+            mix-blend-mode: multiply;
         }
 
         .panel {
@@ -90,11 +91,16 @@
 </head>
 <body>
     <main class="thank-you">
-        <img class="logo" src="images/homequest-logo-no-tagline.png" alt="HomeQuest Solutions">
+        <img class="logo" src="images/homequest-logo.png" alt="HomeQuest Solutions">
         <section class="panel">
             <h1>Thank you.</h1>
-            <p>Your request was received. Someone from HomeQuest Solutions will reach out soon to talk through your property and next steps.</p>
-            <a class="button" href="index.html">Back to homepage</a>
+            <p>Your request was received. Please select a time below to schedule your consultation, or we will reach out to you soon.</p>
+            <!-- Google Calendar Appointment Scheduling begin -->
+            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0HsoYWWuY_5l9fYokdazTMLujDGCX9b0zhdxKA3LLJ-T10uXM6aY0GdN-VEHhgssvjkbA6WAgM?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+            <!-- end Google Calendar Appointment Scheduling -->
+            <div style="margin-top: 24px;">
+                <a class="button" href="index.html">Back to homepage</a>
+            </div>
         </section>
     </main>
 </body>
