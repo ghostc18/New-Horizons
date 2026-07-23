@@ -176,8 +176,55 @@ function initForms() {
     });
 }
 
+function initStickyCTA() {
+    const hero = document.querySelector('.hero');
+    const stickyCTA = document.querySelector('.mobile-sticky-cta');
+    
+    if (!hero || !stickyCTA) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                stickyCTA.classList.add('is-visible');
+            } else {
+                stickyCTA.classList.remove('is-visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    observer.observe(hero);
+}
+
+function initAddressAutocomplete() {
+    if (typeof google === 'undefined' || typeof google.maps === 'undefined' || typeof google.maps.places === 'undefined') {
+        return;
+    }
+
+    const quickAddress = document.getElementById('quick-address');
+    if (quickAddress) {
+        new google.maps.places.Autocomplete(quickAddress, {
+            types: ['address'],
+            componentRestrictions: { country: 'us' }
+        });
+    }
+
+    const fullAddress = document.getElementById('address');
+    if (fullAddress) {
+        new google.maps.places.Autocomplete(fullAddress, {
+            types: ['address'],
+            componentRestrictions: { country: 'us' }
+        });
+    }
+}
+
 if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initForms);
+    document.addEventListener("DOMContentLoaded", () => {
+        initForms();
+        initStickyCTA();
+        initAddressAutocomplete();
+    });
 } else {
     initForms();
+    initStickyCTA();
+    initAddressAutocomplete();
 }

@@ -94,6 +94,7 @@
             width: auto;
             display: block;
             object-fit: contain;
+            mix-blend-mode: multiply;
         }
 
         .hero-title-line {
@@ -119,6 +120,7 @@
             width: 260px;
             height: auto;
             display: block;
+            mix-blend-mode: multiply;
         }
 
         .nav-links {
@@ -253,6 +255,16 @@
         @media (max-width: 620px) {
             .mobile-sticky-cta {
                 display: block;
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(100%);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+            
+            .mobile-sticky-cta.is-visible {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
             }
             
             .hero-actions .button:first-child {
@@ -862,16 +874,51 @@
                 padding: 56px 0;
             }
         }
+
+        .announcement-bar {
+            background: var(--forest-dark);
+            color: var(--white);
+            padding: 8px 16px;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            letter-spacing: 0.05em;
+        }
+        .announcement-bar span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .announcement-bar svg {
+            width: 14px;
+            height: 14px;
+            color: var(--orange);
+        }
+        @media (max-width: 620px) {
+            .announcement-bar {
+                flex-direction: column;
+                gap: 4px;
+                padding: 6px 12px;
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="announcement-bar">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 14-day average close</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M9 12l2 2 4-4"></path></svg> 0 seller commissions</span>
+    </div>
     <header class="site-header">
         <div class="container nav">
             <div class="nav-spacer nav-left">
                 <a class="nav-cta" href="#contact">Schedule a consultation</a>
             </div>
-            <a class="brand" href="#">
-                            <img class="brand-logo" src="images/homequest-logo-no-tagline.png" alt="HomeQuest Solutions">
+            <a class="brand" href="/">
+                <img class="brand-logo" src="images/homequest-logo.png" alt="HomeQuest Solutions">
             </a>
             <ul class="nav-links" aria-label="Primary navigation">
                 <li><a href="#options">Your Options</a></li>
@@ -893,24 +940,6 @@
                     <span class="hero-title-line">A Clear Cash Offer.</span>
                 </h1>
                 <p class="hero-copy">Sell as-is with no repairs, no showings, and no seller-side commissions. We give you a straightforward cash offer and let you decide if it works.</p>
-                <div class="trust-bar" role="list" aria-label="Trust indicators">
-                    <div class="trust-bar-item" role="listitem">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                        <span>500+ homes purchased</span>
-                    </div>
-                    <div class="trust-bar-item" role="listitem">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                        <span>14-day average close</span>
-                    </div>
-                    <div class="trust-bar-item" role="listitem">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
-                        <span>0 seller commissions</span>
-                    </div>
-                    <div class="trust-bar-item" role="listitem">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
-                        <span>A+ BBB rating</span>
-                    </div>
-                </div>
                 <div class="hero-actions">
                     <a class="button" href="#start">Schedule a consultation</a>
                     <a class="button secondary" href="#trust">See our standard</a>
@@ -929,12 +958,7 @@
                     <button class="button" type="submit">Schedule a consultation</button>
                     <div class="status" role="status" aria-live="polite"></div>
                 </form>
-                <!-- Calendly embed placeholder - replace with your Calendly inline embed code -->
-                <div id="calendly-embed" style="margin-top: 24px; display: none;">
-                    <!-- Paste your Calendly inline embed code here -->
-                    <!-- <div class="calendly-inline-widget" data-url="https://calendly.com/your-link" style="min-width:320px;height:630px;"></div>
-                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> -->
-                </div>
+
             </div>
         </section>
 
@@ -1094,13 +1118,7 @@
                         <p><a href="tel:5551234567">(555) 123-4567</a></p>
                     </div>
                 </div>
-                <!-- Calendly inline embed placeholder -->
-                <div style="margin-top: 32px; padding: 24px; background: var(--field); border: 1px solid var(--line); border-radius: var(--radius); text-align: center;">
-                    <h3 style="margin-bottom: 12px;">Book a 15-min consultation</h3>
-                    <p style="color: var(--muted); margin-bottom: 16px;">Pick a time that works for you. No pressure, just a conversation.</p>
-                    <div id="calendly-inline" style="min-height: 350px;"></div>
-                    <p style="margin-top: 12px; font-size: 0.85rem; color: var(--muted);"><em>Calendly embed placeholder — replace with your Calendly inline embed code</em></p>
-                </div>
+
                 <form class="contact-card" data-lead-form data-form-type="full_contact">
                     <input class="bot-field" name="company_website" type="text" tabindex="-1" autocomplete="off">
                     <div class="form-grid">
@@ -1190,9 +1208,9 @@
 
     <footer class="site-footer">
         <div class="container footer-grid">
-            <div>
+            <div class="footer-brand">
                 <span class="footer-logo-wrap">
-                    <img src="images/homequest-logo-no-tagline.png" alt="HomeQuest Solutions">
+                    <img class="brand-logo" src="images/homequest-logo.png" alt="HomeQuest Solutions">
                 </span>
                 <p>A clearer, calmer way to compare your home selling options when a traditional listing may not fit.</p>
             </div>
@@ -1218,7 +1236,7 @@
     </footer>
 
     <div class="mobile-sticky-cta" aria-hidden="true">
-        <a class="button" href="#start">Schedule a consultation</a>
+        <a class="button" href="#contact">Get My Offer</a>
     </div>
 
     <script>
@@ -1243,6 +1261,7 @@
             });
         });
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByejLvhEDEwNLh3HmMFtSP-QvchsZumvQ&libraries=places"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/leads.js"></script>
 </body>
