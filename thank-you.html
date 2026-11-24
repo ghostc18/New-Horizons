@@ -11,14 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --ink: #2d2520;
-            --muted: #6b5b4f;
-            --paper: #fefdfb;
+            --ink: #000000;
+            --muted: #6b6b6b;
+            --paper: #FFFAEB;
             --white: #ffffff;
-            --brown: #b8956f;
-            --brown-dark: #9d7a54;
-            --brown-light: #d4b896;
-            --line: #e8ddd0;
+            --accent: #F1EDE0;
+            --accent-dark: #e8e0d0;
+            --accent-light: #f5f0e5;
+            --line: #e8e0d0;
             --radius: 8px;
         }
 
@@ -53,10 +53,10 @@
 
         .panel {
             padding: clamp(28px, 6vw, 56px);
-            background: var(--white);
-            border: 1px solid rgba(184, 149, 111, 0.18);
+            background: var(--ink); color: var(--white);
+            border: 1px solid rgba(0, 0, 0, 0.18);
             border-radius: var(--radius);
-            box-shadow: 0 22px 60px rgba(184, 149, 111, 0.13);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.13);
         }
 
         h1 {
@@ -81,14 +81,14 @@
             border-radius: 999px;
             padding: 11px 18px;
             color: var(--white);
-            background: var(--brown);
+            background: var(--ink);
             font-weight: 800;
             text-decoration: none;
-            box-shadow: 0 10px 24px rgba(184, 149, 111, 0.18);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
         }
 
         .button:hover {
-            background: var(--brown-dark);
+            background: var(--ink);
         }
     </style>
 </head>
