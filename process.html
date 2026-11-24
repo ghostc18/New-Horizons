@@ -1,121 +1,636 @@
-<hero-section>
-    <section class="hero">
-        <div class="container hero-inner">
-            <span class="eyebrow">How It Works</span>
-            <h1>
-                <span class="hero-title-line">Four Steps to</span>
-                <span class="hero-title-line">A Clear Cash Offer</span>
-            </h1>
-            <p class="hero-copy">A cash as-is sale should feel simple from the first conversation to the closing table. Here's exactly what to expect.</p>
-        </div>
-    </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process | HomeQuest Solutions</title>
+    <meta name="description" content="The four-step process for getting a clear cash offer from HomeQuest Solutions.">
+    <link rel="icon" type="image/webp" href="images/homequest-logo-no-tagline-transparent.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #17251f;
+            --muted: #5f685f;
+            --line: #ead8c4;
+            --paper: #fffaf3;
+            --white: #ffffff;
+            --field: #fff1e3;
+            --forest: #17634f;
+            --forest-dark: #0f4538;
+            --orange: #e46f2b;
+            --orange-dark: #b95022;
+            --shadow: 0 22px 60px rgba(23, 99, 79, 0.13);
+            --radius: 8px;
+            --max: 1180px;
+        }
 
-    <section id="process" class="section">
-        <div class="container">
-            <div class="steps">
-                <article class="step">
-                    <h3>1. Request Your Cash Offer</h3>
-                    <p>Send us the property address and a few details about the home so we can start reviewing your options. Takes two minutes online, or call us directly.</p>
-                    <div style="margin-top: 16px; padding: 16px; background: var(--field); border-radius: var(--radius); border: 1px solid var(--line);">
-                        <strong>What we need:</strong>
-                        <ul style="margin-top: 8px; padding-left: 18px; color: var(--muted); display: grid; gap: 4px;">
-                            <li>Property address</li>
-                            <li>Your contact info</li>
-                            <li>General condition (rough idea is fine)</li>
-                            <li>Your ideal timeline</li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="step">
-                    <h3>2. We Review It As-Is</h3>
-                    <p>We look at the property, repair needs, local values, and your timeline so the offer fits the real situation—not a best-case scenario.</p>
-                    <div style="margin-top: 16px; padding: 16px; background: var(--field); border-radius: var(--radius); border: 1px solid var(--line);">
-                        <strong>What we analyze:</strong>
-                        <ul style="margin-top: 8px; padding-left: 18px; color: var(--muted); display: grid; gap: 4px;">
-                            <li>Recent comparable sales in your area</li>
-                            <li>Estimated repair & update costs</li>
-                            <li>Holding costs (taxes, insurance, utilities)</li>
-                            <li>Closing costs & title fees</li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="step">
-                    <h3>3. Get a Clear Cash Number</h3>
-                    <p>You receive a straightforward cash offer with no seller-side commissions, repairs, cleanup, or prep needed, and no obligation to accept.</p>
-                    <div style="margin-top: 16px; padding: 16px; background: var(--field); border-radius: var(--radius); border: 1px solid var(--line);">
-                        <strong>Your offer includes:</strong>
-                        <ul style="margin-top: 8px; padding-left: 18px; color: var(--muted); display: grid; gap: 4px;">
-                            <li>Offer price in writing</li>
-                            <li>Repair estimate breakdown</li>
-                            <li>All closing costs itemized</li>
-                            <li>Your estimated net proceeds</li>
-                            <li>Proposed closing date range</li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="step">
-                    <h3>4. Close on Your Schedule</h3>
-                    <p>If the offer works, we coordinate title and paperwork so you can close in as soon as 14 days or choose a date that gives you room.</p>
-                    <div style="margin-top: 16px; padding: 16px; background: var(--field); border-radius: var(--radius); border: 1px solid var(--line);">
-                        <strong>We handle:</strong>
-                        <ul style="margin-top: 8px; padding-left: 18px; color: var(--muted); display: grid; gap: 4px;">
-                            <li>Title search & clearance</li>
-                            <li>Payoff of existing mortgages/liens</li>
-                            <li>Closing document preparation</li>
-                            <li>Wire transfer at closing</li>
-                            <li>Flexible move-out coordination</li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <section class="section contrast">
-        <div class="container" style="text-align: center;">
-            <span class="section-kicker">Ready to start?</span>
-            <h2>Step 1 Takes Two Minutes</h2>
-            <p class="lead" style="max-width: 600px; margin: 0 auto 24px;">Fill out the quick form or call us. Either way, you'll have a real conversation with a real person—no bots, no pressure.</p>
-            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a class="button" href="contact.html">Schedule a consultation</a>
-                <a class="button secondary" href="tel:5551234567">Call (555) 123-4567</a>
-            </div>
-        </div>
-    </section>
+        html {
+            scroll-behavior: smooth;
+        }
 
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-kicker">Common scenarios</span>
-                <h2>When This Process Helps Most</h2>
-                <p class="lead">Cash offers shine in situations where time, certainty, or condition matter more than squeezing every dollar.</p>
+        body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(var(--max), calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(255, 250, 243, 0.92);
+            border-bottom: 1px solid rgba(228, 111, 43, 0.16);
+            backdrop-filter: blur(16px);
+        }
+
+        .nav {
+            min-height: 92px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-spacer {
+            min-width: 1px;
+        }
+
+        .nav-left {
+            justify-self: start;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: 0;
+            justify-self: center;
+        }
+
+        .brand-logo {
+            height: 50px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 16px;
+            list-style: none;
+            color: var(--muted);
+            font-size: 0.72rem;
+            font-weight: 750;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--forest);
+        }
+
+        .nav-phone {
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 7px 10px;
+            color: var(--ink);
+            background: var(--white);
+        }
+
+        .nav-cta {
+            border-radius: 999px;
+            padding: 8px 12px;
+            color: var(--white);
+            background: var(--forest);
+            box-shadow: 0 8px 18px rgba(23, 99, 79, 0.16);
+        }
+
+        .hero {
+            position: relative;
+            min-height: 500px;
+            display: grid;
+            align-items: center;
+            color: var(--ink);
+            background-color: var(--paper);
+        }
+
+        .hero-inner {
+            padding: 72px 0 78px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 22px;
+            color: var(--orange-dark);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 36px;
+            height: 2px;
+            background: var(--orange);
+        }
+
+        .hero-title-line {
+            display: block;
+        }
+
+        .hero-title-line + .hero-title-line {
+            margin-top: 0.04em;
+        }
+
+        .hero h1 {
+            max-width: 640px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(2.5rem, 4.7vw, 4.95rem);
+            font-weight: 500;
+            letter-spacing: 0;
+            line-height: 0.98;
+        }
+
+        .hero-copy {
+            max-width: 620px;
+            margin-top: 22px;
+            color: var(--muted);
+            font-size: clamp(1rem, 1.65vw, 1.15rem);
+        }
+
+        .section {
+            padding: 76px 0;
+        }
+
+        .section-header {
+            max-width: 720px;
+            margin-bottom: 30px;
+        }
+
+        .section-kicker {
+            color: var(--orange-dark);
+            font-size: 0.78rem;
+            font-weight: 850;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            margin-top: 10px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.9rem, 3.25vw, 3.65rem);
+            font-weight: 500;
+            letter-spacing: 0;
+            line-height: 1;
+        }
+
+        .lead {
+            margin-top: 14px;
+            color: var(--muted);
+            font-size: 1.02rem;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            counter-reset: step;
+        }
+
+        .step {
+            position: relative;
+            min-height: 220px;
+            padding-top: 68px;
+            counter-increment: step;
+        }
+
+        .step::before {
+            content: counter(step);
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            display: grid;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--forest);
+            box-shadow: 0 0 0 5px rgba(228, 111, 43, 0.12);
+            color: var(--white);
+            font-weight: 850;
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+            font-size: 1.08rem;
+            line-height: 1.25;
+        }
+
+        .step p {
+            color: var(--muted);
+        }
+
+        .step-detail {
+            margin-top: 16px;
+            padding: 16px;
+            background: var(--field);
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+        }
+
+        .step-detail strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--ink);
+        }
+
+        .step-detail ul {
+            display: grid;
+            gap: 4px;
+            padding-left: 18px;
+            color: var(--muted);
+        }
+
+        .contrast {
+            background: linear-gradient(135deg, var(--forest-dark), #123529);
+            color: var(--white);
+        }
+
+        .contrast .section-kicker,
+        .contrast .lead {
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .situation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+            gap: 16px;
+        }
+
+        .situation {
+            background: var(--white);
+            border: 1px solid rgba(228, 111, 43, 0.14);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: 0 10px 34px rgba(23, 99, 79, 0.07);
+        }
+
+        .situation h3 {
+            margin-bottom: 10px;
+            font-size: 1.08rem;
+            line-height: 1.25;
+        }
+
+        .situation p {
+            color: var(--muted);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            padding: 11px 18px;
+            color: var(--white);
+            background: var(--forest);
+            font-weight: 800;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 10px 24px rgba(23, 99, 79, 0.18);
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .button:hover {
+            background: var(--forest-dark);
+            transform: translateY(-1px);
+        }
+
+        .button.secondary {
+            color: var(--forest-dark);
+            background: rgba(255, 241, 227, 0.78);
+            border-color: rgba(228, 111, 43, 0.34);
+        }
+
+        .button.secondary:hover {
+            background: var(--white);
+        }
+
+        .site-footer {
+            padding: 48px 0;
+            background: var(--forest-dark);
+            color: rgba(255, 255, 255, 0.76);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 0.8fr;
+            gap: 32px;
+        }
+
+        .site-footer strong,
+        .site-footer h3 {
+            color: var(--white);
+        }
+
+        .site-footer a {
+            text-decoration: none;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .footer-logo-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 12px;
+            margin-bottom: 14px;
+            background: var(--paper);
+            border-radius: var(--radius);
+            border: 1px solid rgba(228, 111, 43, 0.22);
+        }
+
+        .footer-logo-wrap img {
+            width: 260px;
+            height: auto;
+            display: block;
+            mix-blend-mode: multiply;
+        }
+
+        @media (max-width: 960px) {
+            .nav-links {
+                display: none;
+            }
+
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .situation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .container {
+                width: min(var(--max), calc(100% - 28px));
+            }
+
+            .nav {
+                min-height: 76px;
+            }
+
+            .brand-logo {
+                height: 40px;
+            }
+
+            .section {
+                padding: 56px 0;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <div class="nav-spacer nav-left">
+                <a class="nav-cta" href="contact.html">Schedule a consultation</a>
             </div>
-            <div class="situation-grid">
-                <article class="situation">
-                    <h3>Inherited Property</h3>
-                    <p>Probate delays, out-of-state ownership, or a home that needs work you can't manage from afar.</p>
-                </article>
-                <article class="situation">
-                    <h3>Relocation / Job Transfer</h3>
-                    <p>You have a firm move date and can't carry two mortgages or wait for a retail buyer.</p>
-                </article>
-                <article class="situation">
-                    <h3>Divorce or Separation</h3>
-                    <p>Clean break, split proceeds, move on. No showings with an ex in the house.</p>
-                </article>
-                <article class="situation">
-                    <h3>Major Repairs Needed</h3>
-                    <p>Foundation, roof, HVAC, mold, or outdated everything. We factor it in; you don't fix it.</p>
-                </article>
-                <article class="situation">
-                    <h3>Landlord Fatigue</h3>
-                    <p>Tenant issues, vacancy, or just done managing rental property. We buy with tenants in place.</p>
-                </article>
-                <article class="situation">
-                    <h3>Financial Pressure</h3>
-                    <p>Foreclosure risk, tax liens, medical bills, or debt. Fast close stops the clock.</p>
-                </article>
+            <a class="brand" href="index.html">
+                <img class="brand-logo" src="images/homequest-logo-transparent.webp" alt="HomeQuest Solutions">
+            </a>
+            <ul class="nav-links" aria-label="Primary navigation">
+                <li><a href="options.html">Your Options</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="about.html">Our Standard</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a class="nav-phone" href="tel:5551234567">(555) 123-4567</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-inner">
+                <span class="eyebrow">How It Works</span>
+                <h1>
+                    <span class="hero-title-line">Four Steps to</span>
+                    <span class="hero-title-line">A Clear Conversation</span>
+                </h1>
+                <p class="hero-copy">A cash as-is sale should feel simple from the first conversation to the closing table. Here's exactly what to expect.</p>
+            </div>
+        </section>
+
+        <section id="process" class="section">
+            <div class="container">
+                <div class="steps">
+                    <article class="step">
+                        <h3>1. Schedule a Consultation</h3>
+                        <p>Send us the property address and a few details about the home so we can start reviewing your options. Takes two minutes online, or call us directly.</p>
+                        <div class="step-detail">
+                            <strong>What we need:</strong>
+                            <ul>
+                                <li>Property address</li>
+                                <li>Your contact info</li>
+                                <li>General condition (rough idea is fine)</li>
+                                <li>Your ideal timeline</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="step">
+                        <h3>2. We Review It As-Is</h3>
+                        <p>We look at the property, repair needs, local values, and your timeline so the offer fits the real situation—not a best-case scenario.</p>
+                        <div class="step-detail">
+                            <strong>What we analyze:</strong>
+                            <ul>
+                                <li>Recent comparable sales in your area</li>
+                                <li>Estimated repair & update costs</li>
+                                <li>Holding costs (taxes, insurance, utilities)</li>
+                                <li>Closing costs & title fees</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="step">
+                        <h3>3. Get a Clear Cash Number</h3>
+                        <p>You receive a straightforward cash offer with no seller-side commissions, repairs, cleanup, or prep needed, and no obligation to accept.</p>
+                        <div class="step-detail">
+                            <strong>Your offer includes:</strong>
+                            <ul>
+                                <li>Offer price in writing</li>
+                                <li>Repair estimate breakdown</li>
+                                <li>All closing costs itemized</li>
+                                <li>Your estimated net proceeds</li>
+                                <li>Proposed closing date range</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="step">
+                        <h3>4. Close on Your Schedule</h3>
+                        <p>If the offer works, we coordinate title and paperwork so you can close in as soon as 14 days or choose a date that gives you room.</p>
+                        <div class="step-detail">
+                            <strong>We handle:</strong>
+                            <ul>
+                                <li>Title search & clearance</li>
+                                <li>Payoff of existing mortgages/liens</li>
+                                <li>Closing document preparation</li>
+                                <li>Wire transfer at closing</li>
+                                <li>Flexible move-out coordination</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contrast">
+            <div class="container" style="text-align: center;">
+                <span class="section-kicker">Ready to start?</span>
+                <h2>Step 1 Takes Two Minutes</h2>
+                <p class="lead" style="max-width: 600px; margin: 0 auto 24px;">Fill out the quick form or call us. Either way, you'll have a real conversation with a real person—no bots, no pressure.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a class="button" href="contact.html">Schedule a Consultation</a>
+                    <a class="button secondary" href="tel:5551234567">Call (555) 123-4567</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Common scenarios</span>
+                    <h2>When This Process Helps Most</h2>
+                    <p class="lead">Cash offers shine in situations where time, certainty, or condition matter more than squeezing every dollar.</p>
+                </div>
+                <div class="situation-grid">
+                    <article class="situation">
+                        <h3>Inherited Property</h3>
+                        <p>Probate delays, out-of-state ownership, or a home that needs work you can't manage from afar.</p>
+                    </article>
+                    <article class="situation">
+                        <h3>Relocation / Job Transfer</h3>
+                        <p>You have a firm move date and can't carry two mortgages or wait for a retail buyer.</p>
+                    </article>
+                    <article class="situation">
+                        <h3>Divorce or Separation</h3>
+                        <p>Clean break, split proceeds, move on. No showings with an ex in the house.</p>
+                    </article>
+                    <article class="situation">
+                        <h3>Major Repairs Needed</h3>
+                        <p>Foundation, roof, HVAC, mold, or outdated everything. We factor it in; you don't fix it.</p>
+                    </article>
+                    <article class="situation">
+                        <h3>Landlord Fatigue</h3>
+                        <p>Tenant issues, vacancy, or just done managing rental property. We buy with tenants in place.</p>
+                    </article>
+                    <article class="situation">
+                        <h3>Financial Pressure</h3>
+                        <p>Foreclosure risk, tax liens, medical bills, or debt. Fast close stops the clock.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <span class="footer-logo-wrap">
+                    <img src="images/homequest-logo-no-tagline-transparent.webp" alt="HomeQuest Solutions">
+                </span>
+                <p>A clearer, calmer way to compare your home selling options when a traditional listing may not fit.</p>
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <ul class="footer-links">
+                    <li><a href="options.html">Your Options</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="about.html">Our Standard</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="sms-terms.html">SMS Terms</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:5551234567">(555) 123-4567</a></li>
+                    <li><a href="mailto:isaiahjrod5@gmail.com">isaiahjrod5@gmail.com</a></li>
+                </ul>
             </div>
         </div>
-    </section>
-</hero-section>
+    </footer>
+
+    <script>
+        document.querySelectorAll('input[type="tel"]').forEach((input) => {
+            input.addEventListener("input", () => {
+                const digits = input.value.replace(/\D/g, "").slice(0, 10);
+                const parts = [
+                    digits.slice(0, 3),
+                    digits.slice(3, 6),
+                    digits.slice(6, 10)
+                ].filter(Boolean);
+
+                if (digits.length > 6) {
+                    input.value = `(${parts[0]}) ${parts[1]}-${parts[2]}`;
+                } else if (digits.length > 3) {
+                    input.value = `(${parts[0]}) ${parts[1]}`;
+                } else if (digits.length > 0) {
+                    input.value = `(${parts[0]}`;
+                } else {
+                    input.value = "";
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/leads.js"></script>
+</body>
+</html>
