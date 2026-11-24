@@ -1,93 +1,609 @@
-<hero-section>
-    <section class="hero">
-        <div class="container hero-inner">
-            <span class="eyebrow">Our Promise</span>
-            <h1>
-                <span class="hero-title-line">The HomeQuest Solutions</span>
-                <span class="hero-title-line">Standard</span>
-            </h1>
-            <p class="hero-copy">A cash sale should be clear, respectful, and easy to understand before you make a decision.</p>
-        </div>
-    </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Standard | HomeQuest Solutions</title>
+    <meta name="description" content="The HomeQuest Solutions Standard - transparent cash offers, no pressure, your timeline.">
+    <link rel="icon" type="image/webp" href="images/homequest-logo-no-tagline-transparent.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #2d2520;
+            --muted: #6b5b4f;
+            --line: #d4c4b0;
+            --paper: #faf6f0;
+            --white: #ffffff;
+            --field: #f3ebe1;
+            --brown: #8b6b4a;
+            --brown-dark: #6b4f36;
+            --brown-light: #a68564;
+            --cream: #f5efe7;
+            --cream-dark: #e8dfd3;
+            --shadow: 0 22px 60px rgba(139, 107, 74, 0.15);
+            --radius: 8px;
+            --max: 1180px;
+        }
 
-    <section id="trust" class="section contrast">
-        <div class="container split">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(var(--max), calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(255, 250, 243, 0.92);
+            border-bottom: 1px solid rgba(139, 107, 74, 0.16);
+            backdrop-filter: blur(16px);
+        }
+
+        .nav {
+            min-height: 92px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-spacer {
+            min-width: 1px;
+        }
+
+        .nav-left {
+            justify-self: start;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: 0;
+            justify-self: center;
+        }
+
+        .brand-logo {
+            height: 50px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 16px;
+            list-style: none;
+            color: var(--muted);
+            font-size: 0.72rem;
+            font-weight: 750;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--brown);
+        }
+
+        .nav-phone {
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 7px 10px;
+            color: var(--ink);
+            background: var(--white);
+        }
+
+        .nav-cta {
+            border-radius: 999px;
+            padding: 8px 12px;
+            color: var(--white);
+            background: var(--brown);
+            box-shadow: 0 8px 18px rgba(139, 107, 74, 0.16);
+        }
+
+        .hero {
+            position: relative;
+            min-height: 500px;
+            display: grid;
+            align-items: center;
+            color: var(--ink);
+            background-color: var(--paper);
+        }
+
+        .hero-inner {
+            padding: 72px 0 78px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 22px;
+            color: var(--brown-dark);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 36px;
+            height: 2px;
+            background: var(--brown);
+        }
+
+        .hero-title-line {
+            display: block;
+        }
+
+        .hero-title-line + .hero-title-line {
+            margin-top: 0.04em;
+        }
+
+        .hero h1 {
+            max-width: 640px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(2.5rem, 4.7vw, 4.95rem);
+            font-weight: 500;
+            letter-spacing: 0;
+            line-height: 0.98;
+        }
+
+        .hero-copy {
+            max-width: 620px;
+            margin-top: 22px;
+            color: var(--muted);
+            font-size: clamp(1rem, 1.65vw, 1.15rem);
+        }
+
+        .section {
+            padding: 76px 0;
+        }
+
+        .section.tight-bottom {
+            padding-bottom: 4px;
+        }
+
+        .section-header {
+            max-width: 720px;
+            margin-bottom: 30px;
+        }
+
+        .section-kicker {
+            color: var(--brown-dark);
+            font-size: 0.78rem;
+            font-weight: 850;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            margin-top: 10px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.9rem, 3.25vw, 3.65rem);
+            font-weight: 500;
+            letter-spacing: 0;
+            line-height: 1;
+        }
+
+        .lead {
+            margin-top: 14px;
+            color: var(--muted);
+            font-size: 1.02rem;
+        }
+
+        .promise-band {
+            background: var(--brown-dark);
+            color: var(--white);
+            padding: 30px 0;
+        }
+
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .promise {
+            min-height: 120px;
+            padding: 20px;
+            background: var(--brown-dark);
+        }
+
+        .promise strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .promise span {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.94rem;
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: minmax(0, 0.96fr) minmax(320px, 0.72fr);
+            gap: 44px;
+            align-items: start;
+        }
+
+        .story-panel {
+            border-left: 4px solid var(--brown);
+            padding: 10px 0 10px 24px;
+        }
+
+        .story-panel p {
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .note {
+            margin-top: 22px;
+            padding: 20px;
+            background: var(--field);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+        }
+
+        .note strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--ink);
+        }
+
+        .note p {
+            color: var(--muted);
+        }
+
+        .contrast {
+            background: linear-gradient(135deg, var(--brown-dark), #5a3d2a);
+            color: var(--white);
+        }
+
+        .contrast .section-kicker,
+        .contrast .lead {
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .compare {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .compare-panel {
+            padding: 32px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .compare-panel h3 {
+            margin-bottom: 18px;
+            font-size: 1.28rem;
+        }
+
+        .compare-panel ul {
+            display: grid;
+            gap: 12px;
+            padding-left: 18px;
+            color: rgba(255, 255, 255, 0.76);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            padding: 11px 18px;
+            color: var(--white);
+            background: var(--brown);
+            font-weight: 800;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 10px 24px rgba(139, 107, 74, 0.18);
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .button:hover {
+            background: var(--brown-dark);
+            transform: translateY(-1px);
+        }
+
+        .button.secondary {
+            color: var(--brown-dark);
+            background: rgba(255, 241, 227, 0.78);
+            border-color: rgba(139, 107, 74, 0.34);
+        }
+
+        .button.secondary:hover {
+            background: var(--white);
+        }
+
+        .site-footer {
+            padding: 48px 0;
+            background: var(--brown-dark);
+            color: rgba(255, 255, 255, 0.76);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 0.8fr;
+            gap: 32px;
+        }
+
+        .site-footer strong,
+        .site-footer h3 {
+            color: var(--white);
+        }
+
+        .site-footer a {
+            text-decoration: none;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .footer-logo-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 12px;
+            margin-bottom: 14px;
+            background: var(--paper);
+            border-radius: var(--radius);
+            border: 1px solid rgba(139, 107, 74, 0.22);
+        }
+
+        .footer-logo-wrap img {
+            width: 260px;
+            height: auto;
+            display: block;
+            mix-blend-mode: multiply;
+        }
+
+        @media (max-width: 960px) {
+            .nav-links {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .container {
+                width: min(var(--max), calc(100% - 28px));
+            }
+
+            .nav {
+                min-height: 76px;
+            }
+
+            .brand-logo {
+                height: 40px;
+            }
+
+            .section {
+                padding: 56px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <div class="nav-spacer nav-left">
+                <a class="nav-cta" href="contact.html">Schedule a consultation</a>
+            </div>
+            <a class="brand" href="index.html">
+                <img class="brand-logo" src="images/homequest-logo-transparent.webp" alt="HomeQuest Solutions">
+            </a>
+            <ul class="nav-links" aria-label="Primary navigation">
+                <li><a href="options.html">Your Options</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="about.html">Our Standard</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a class="nav-phone" href="tel:5551234567">(555) 123-4567</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-inner">
+                <span class="eyebrow">Our Promise</span>
+                <h1>
+                    <span class="hero-title-line">The HomeQuest Solutions</span>
+                    <span class="hero-title-line">Standard</span>
+                </h1>
+                <p class="hero-copy">A cash sale should be clear, respectful, and easy to understand before you make a decision.</p>
+            </div>
+        </section>
+
+        <section id="trust" class="section contrast">
+            <div class="container split">
+                <div>
+                    <span class="section-kicker">Our Promise</span>
+                    <h2>The HomeQuest Solutions Standard</h2>
+                    <p class="lead">We built this company on the belief that selling for cash doesn't have to feel shady, rushed, or confusing.</p>
+                </div>
+                <div class="compare">
+                    <div class="compare-panel">
+                        <h3>Clear from the Start</h3>
+                        <ul>
+                            <li>A straightforward cash offer in writing</li>
+                            <li>No seller-side commissions</li>
+                            <li>No repairs, cleanup, or prep required</li>
+                            <li>A closing timeline built around your move</li>
+                            <li>Full math shown: ARV, repairs, costs, net</li>
+                        </ul>
+                    </div>
+                    <div class="compare-panel">
+                        <h3>Pressure Kept Out</h3>
+                        <ul>
+                            <li>No open houses or repeated showings</li>
+                            <li>No fake urgency or countdown tactics</li>
+                            <li>No obligation after you see the offer</li>
+                            <li>No chasing you if the offer isn't right</li>
+                            <li>You control the timeline</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container split">
+                <div class="story-panel">
+                    <p>We started HomeQuest Solutions after watching too many homeowners get stuck between a rock and a hard place—needing to sell fast but not wanting to give away equity to someone who treats the transaction like a volume game.</p>
+                    <p>Every homeowner deserves to see the numbers, understand the tradeoffs, and make the call on their own terms. That's not a slogan. It's the only way we operate.</p>
+                </div>
+                <div>
+                    <div class="note">
+                        <strong>Our Commitment in Writing</strong>
+                        <p>Every offer we make includes a one-page summary: offer price, estimated repairs, closing costs, and your projected net proceeds. No fine print. No surprises at the closing table.</p>
+                    </div>
+                    <div class="note" style="margin-top: 16px;">
+                        <strong>No Obligation, Ever</strong>
+                        <p>Requesting an offer doesn't commit you to anything. We'll follow up once or twice, then we're done. If the offer doesn't work, we part ways as friends.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="promise-band" aria-label="Core promises">
+            <div class="container promise-grid">
+                <div class="promise">
+                    <strong>Transparent Math</strong>
+                    <span>We show you the ARV, repair estimate, holding costs, and our margin.</span>
+                </div>
+                <div class="promise">
+                    <strong>Your Timeline</strong>
+                    <span>Close in 14 days or 60—whatever works for your life.</span>
+                </div>
+                <div class="promise">
+                    <strong>As-Is Means As-Is</strong>
+                    <span>No cleaning, no staging, no repair negotiations. Ever.</span>
+                </div>
+                <div class="promise">
+                    <strong>Zero Pressure</strong>
+                    <span>No expiration timers, no "decide today" tactics. Your decision.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container" style="text-align: center;">
+                <span class="section-kicker">See for yourself</span>
+                <h2>Request a Consultation With Zero Risk</h2>
+                <p class="lead" style="max-width: 600px; margin: 0 auto 24px;">The only way to know if a cash offer works for you is to see the numbers. Takes two minutes. No cost. No obligation.</p>
+                <a class="button" href="contact.html">Schedule a Consultation</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
             <div>
-                <span class="section-kicker">Our Promise</span>
-                <h2>The HomeQuest Solutions Standard</h2>
-                <p class="lead">We built this company on the belief that selling for cash doesn't have to feel shady, rushed, or confusing.</p>
-            </div>
-            <div class="compare">
-                <div class="compare-panel">
-                    <h3>Clear from the Start</h3>
-                    <ul>
-                        <li>A straightforward cash offer in writing</li>
-                        <li>No seller-side commissions</li>
-                        <li>No repairs, cleanup, or prep required</li>
-                        <li>A closing timeline built around your move</li>
-                        <li>Full math shown: ARV, repairs, costs, net</li>
-                    </ul>
-                </div>
-                <div class="compare-panel">
-                    <h3>Pressure Kept Out</h3>
-                    <ul>
-                        <li>No open houses or repeated showings</li>
-                        <li>No fake urgency or countdown tactics</li>
-                        <li>No obligation after you see the offer</li>
-                        <li>No chasing you if the offer isn't right</li>
-                        <li>You control the timeline</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container split">
-            <div class="story-panel">
-                <p>We started HomeQuest Solutions after watching too many homeowners get stuck between a rock and a hard place—needing to sell fast but not wanting to give away equity to someone who treats the transaction like a volume game.</p>
-                <p>Every homeowner deserves to see the numbers, understand the tradeoffs, and make the call on their own terms. That's not a slogan. It's the only way we operate.</p>
+                <span class="footer-logo-wrap">
+                    <img src="images/homequest-logo-no-tagline-transparent.webp" alt="HomeQuest Solutions">
+                </span>
+                <p>A clearer, calmer way to compare your home selling options when a traditional listing may not fit.</p>
             </div>
             <div>
-                <div class="note">
-                    <strong>Our Commitment in Writing</strong>
-                    <p>Every offer we make includes a one-page summary: offer price, estimated repairs, closing costs, and your projected net proceeds. No fine print. No surprises at the closing table.</p>
-                </div>
-                <div class="note" style="margin-top: 16px;">
-                    <strong>No Obligation, Ever</strong>
-                    <p>Requesting an offer doesn't commit you to anything. We'll follow up once or twice, then we're done. If the offer doesn't work, we part ways as friends.</p>
-                </div>
+                <h3>Explore</h3>
+                <ul class="footer-links">
+                    <li><a href="options.html">Your Options</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="about.html">Our Standard</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="sms-terms.html">SMS Terms</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:5551234567">(555) 123-4567</a></li>
+                    <li><a href="mailto:isaiahjrod5@gmail.com">isaiahjrod5@gmail.com</a></li>
+                </ul>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <section class="promise-band" aria-label="Core promises">
-        <div class="container promise-grid">
-            <div class="promise">
-                <strong>Transparent Math</strong>
-                <span>We show you the ARV, repair estimate, holding costs, and our margin.</span>
-            </div>
-            <div class="promise">
-                <strong>Your Timeline</strong>
-                <span>Close in 14 days or 60—whatever works for your life.</span>
-            </div>
-            <div class="promise">
-                <strong>As-Is Means As-Is</strong>
-                <span>No cleaning, no staging, no repair negotiations. Ever.</span>
-            </div>
-            <div class="promise">
-                <strong>Zero Pressure</strong>
-                <span>No expiration timers, no "decide today" tactics. Your decision.</span>
-            </div>
-        </div>
-    </section>
+    <script>
+        document.querySelectorAll('input[type="tel"]').forEach((input) => {
+            input.addEventListener("input", () => {
+                const digits = input.value.replace(/\D/g, "").slice(0, 10);
+                const parts = [
+                    digits.slice(0, 3),
+                    digits.slice(3, 6),
+                    digits.slice(6, 10)
+                ].filter(Boolean);
 
-    <section class="section">
-        <div class="container" style="text-align: center;">
-            <span class="section-kicker">See for yourself</span>
-            <h2>Request an Offer With Zero Risk</h2>
-            <p class="lead" style="max-width: 600px; margin: 0 auto 24px;">The only way to know if a cash offer works for you is to see the numbers. Takes two minutes. No cost. No obligation.</p>
-            <a class="button" href="contact.html">Schedule a consultation</a>
-        </div>
-    </section>
-</hero-section>
+                if (digits.length > 6) {
+                    input.value = `(${parts[0]}) ${parts[1]}-${parts[2]}`;
+                } else if (digits.length > 3) {
+                    input.value = `(${parts[0]}) ${parts[1]}`;
+                } else if (digits.length > 0) {
+                    input.value = `(${parts[0]}`;
+                } else {
+                    input.value = "";
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/leads.js"></script>
+</body>
+</html>

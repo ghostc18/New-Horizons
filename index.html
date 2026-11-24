@@ -11,17 +11,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --ink: #17251f;
-            --muted: #5f685f;
-            --line: #ead8c4;
-            --paper: #fffaf3;
+            --ink: #2d2520;
+            --muted: #6b5b4f;
+            --line: #d4c4b0;
+            --paper: #faf6f0;
             --white: #ffffff;
-            --field: #fff1e3;
-            --forest: #17634f;
-            --forest-dark: #0f4538;
-            --orange: #e46f2b;
-            --orange-dark: #b95022;
-            --shadow: 0 22px 60px rgba(23, 99, 79, 0.13);
+            --field: #f3ebe1;
+            --brown: #8b6b4a;
+            --brown-dark: #6b4f36;
+            --brown-light: #a68564;
+            --cream: #f5efe7;
+            --cream-dark: #e8dfd3;
+            --shadow: 0 22px 60px rgba(139, 107, 74, 0.15);
             --radius: 8px;
             --max: 1180px;
         }
@@ -63,7 +64,7 @@
             top: 0;
             z-index: 20;
             background: rgba(255, 250, 243, 0.92);
-            border-bottom: 1px solid rgba(228, 111, 43, 0.16);
+            border-bottom: 1px solid rgba(139, 107, 74, 0.16);
             backdrop-filter: blur(16px);
         }
 
@@ -116,7 +117,7 @@
             margin-bottom: 14px;
             background: var(--paper);
             border-radius: var(--radius);
-            border: 1px solid rgba(228, 111, 43, 0.22);
+            border: 1px solid rgba(139, 107, 74, 0.22);
         }
 
         .footer-logo-wrap img {
@@ -144,7 +145,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--forest);
+            color: var(--brown);
         }
 
         .nav-phone {
@@ -159,8 +160,8 @@
             border-radius: 999px;
             padding: 8px 12px;
             color: var(--white);
-            background: var(--forest);
-            box-shadow: 0 8px 18px rgba(23, 99, 79, 0.16);
+            background: var(--brown);
+            box-shadow: 0 8px 18px rgba(139, 107, 74, 0.16);
         }
 
         .hero {
@@ -198,7 +199,7 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 22px;
-            color: var(--orange-dark);
+            color: var(--brown-dark);
             font-size: 0.78rem;
             font-weight: 800;
             letter-spacing: 0.12em;
@@ -209,7 +210,7 @@
             content: "";
             width: 36px;
             height: 2px;
-            background: var(--orange);
+            background: var(--brown);
         }
 
         .trust-bar {
@@ -218,7 +219,7 @@
             gap: 16px 24px;
             margin-top: 24px;
             padding-top: 20px;
-            border-top: 1px solid rgba(228, 111, 43, 0.18);
+            border-top: 1px solid rgba(139, 107, 74, 0.18);
             color: var(--muted);
             font-size: 0.85rem;
             font-weight: 600;
@@ -233,7 +234,7 @@
         .trust-bar-item svg {
             width: 18px;
             height: 18px;
-            color: var(--forest);
+            color: var(--brown);
             flex-shrink: 0;
         }
 
@@ -246,8 +247,8 @@
             z-index: 100;
             padding: 12px 16px;
             background: var(--white);
-            border-top: 1px solid rgba(228, 111, 43, 0.18);
-            box-shadow: 0 -4px 20px rgba(23, 99, 79, 0.12);
+            border-top: 1px solid rgba(139, 107, 74, 0.18);
+            box-shadow: 0 -4px 20px rgba(139, 107, 74, 0.12);
         }
 
         .mobile-sticky-cta .button {
@@ -308,23 +309,23 @@
             border-radius: 999px;
             padding: 11px 18px;
             color: var(--white);
-            background: var(--forest);
+            background: var(--brown);
             font-weight: 800;
             text-decoration: none;
             cursor: pointer;
-            box-shadow: 0 10px 24px rgba(23, 99, 79, 0.18);
+            box-shadow: 0 10px 24px rgba(139, 107, 74, 0.18);
             transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
         }
 
         .button:hover {
-            background: var(--forest-dark);
+            background: var(--brown-dark);
             transform: translateY(-1px);
         }
 
         .button.secondary {
-            color: var(--forest-dark);
+            color: var(--brown-dark);
             background: rgba(255, 241, 227, 0.78);
-            border-color: rgba(228, 111, 43, 0.34);
+            border-color: rgba(139, 107, 74, 0.34);
         }
 
         .button.secondary:hover {
@@ -344,7 +345,7 @@
             align-items: end;
             padding: 18px;
             background: var(--white);
-            border: 1px solid rgba(228, 111, 43, 0.16);
+            border: 1px solid rgba(139, 107, 74, 0.16);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
         }
@@ -374,8 +375,8 @@
         input:focus,
         textarea:focus,
         select:focus {
-            outline: 3px solid rgba(31, 91, 69, 0.16);
-            border-color: var(--forest);
+            outline: 3px solid rgba(139, 107, 74, 0.16);
+            border-color: var(--brown);
         }
 
         .bot-field {
@@ -423,7 +424,7 @@
         }
 
         .section-kicker {
-            color: var(--orange-dark);
+            color: var(--brown-dark);
             font-size: 0.78rem;
             font-weight: 850;
             letter-spacing: 0.12em;
@@ -446,7 +447,7 @@
         }
 
         .promise-band {
-            background: var(--forest-dark);
+            background: var(--brown-dark);
             color: var(--white);
             padding: 30px 0;
         }
@@ -462,7 +463,7 @@
         .promise {
             min-height: 120px;
             padding: 20px;
-            background: var(--forest-dark);
+            background: var(--brown-dark);
         }
 
         .promise strong {
@@ -484,7 +485,7 @@
         }
 
         .story-panel {
-            border-left: 4px solid var(--orange);
+            border-left: 4px solid var(--brown);
             padding: 10px 0 10px 24px;
         }
 
@@ -533,7 +534,7 @@
             border-radius: 50%;
             background:
                 linear-gradient(135deg, transparent 39%, var(--white) 40% 52%, transparent 53%),
-                var(--orange);
+                var(--brown);
         }
 
         .option-grid,
@@ -548,10 +549,10 @@
         .step,
         .faq-item {
             background: var(--white);
-            border: 1px solid rgba(228, 111, 43, 0.14);
+            border: 1px solid rgba(139, 107, 74, 0.14);
             border-radius: var(--radius);
             padding: 24px;
-            box-shadow: 0 10px 34px rgba(23, 99, 79, 0.07);
+            box-shadow: 0 10px 34px rgba(139, 107, 74, 0.07);
         }
 
         .option .label {
@@ -560,7 +561,7 @@
             border-radius: 999px;
             padding: 6px 10px;
             background: var(--field);
-            color: var(--forest);
+            color: var(--brown);
             font-size: 0.78rem;
             font-weight: 850;
             letter-spacing: 0.08em;
@@ -607,14 +608,14 @@
             width: 34px;
             height: 34px;
             border-radius: 50%;
-            background: var(--forest);
-            box-shadow: 0 0 0 5px rgba(228, 111, 43, 0.12);
+            background: var(--brown);
+            box-shadow: 0 0 0 5px rgba(139, 107, 74, 0.12);
             color: var(--white);
             font-weight: 850;
         }
 
         .contrast {
-            background: linear-gradient(135deg, var(--forest-dark), #123529);
+            background: linear-gradient(135deg, var(--brown-dark), #5a3d2a);
             color: var(--white);
         }
 
@@ -659,7 +660,7 @@
 
         .contact-card {
             background: var(--white);
-            border: 1px solid rgba(228, 111, 43, 0.14);
+            border: 1px solid rgba(139, 107, 74, 0.14);
             border-radius: var(--radius);
             padding: 28px;
             box-shadow: var(--shadow);
@@ -682,7 +683,7 @@
             align-items: start;
             padding: 14px;
             background: var(--field);
-            border: 1px solid rgba(228, 111, 43, 0.2);
+            border: 1px solid rgba(139, 107, 74, 0.2);
             border-radius: var(--radius);
         }
 
@@ -690,7 +691,7 @@
             width: 18px;
             height: 18px;
             margin-top: 3px;
-            accent-color: var(--forest);
+            accent-color: var(--brown);
         }
 
         .consent-field label {
@@ -700,7 +701,7 @@
         }
 
         .consent-field a {
-            color: var(--forest-dark);
+            color: var(--brown-dark);
             font-weight: 800;
         }
 
@@ -724,7 +725,7 @@
         .legal-section {
             padding: 56px 0;
             background: var(--white);
-            border-top: 1px solid rgba(228, 111, 43, 0.16);
+            border-top: 1px solid rgba(139, 107, 74, 0.16);
         }
 
         .legal-grid {
@@ -752,7 +753,7 @@
 
         .site-footer {
             padding: 48px 0;
-            background: var(--forest-dark);
+            background: var(--brown-dark);
             color: rgba(255, 255, 255, 0.76);
         }
 
@@ -782,8 +783,8 @@
             margin-top: 16px;
             border-radius: var(--radius);
             padding: 12px 14px;
-            background: rgba(228, 111, 43, 0.12);
-            color: var(--forest-dark);
+            background: rgba(139, 107, 74, 0.12);
+            color: var(--brown-dark);
             font-weight: 750;
         }
 
@@ -792,7 +793,7 @@
         }
 
         .status.success {
-            background: rgba(31, 91, 69, 0.12);
+            background: rgba(139, 107, 74, 0.12);
         }
 
         .status.error {
@@ -879,7 +880,7 @@
         }
 
         .announcement-bar {
-            background: var(--forest-dark);
+            background: var(--brown-dark);
             color: var(--white);
             padding: 8px 16px;
             text-align: center;
@@ -898,7 +899,7 @@
         .announcement-bar svg {
             width: 14px;
             height: 14px;
-            color: var(--orange);
+            color: var(--brown);
         }
         @media (max-width: 620px) {
             .announcement-bar {
@@ -940,9 +941,9 @@
                 <h1>
                     <span class="hero-title-line">Your House.</span>
                     <span class="hero-title-line">Your Timeline.</span>
-                    <span class="hero-title-line">A Clear Cash Offer.</span>
+                    <span class="hero-title-line">A Fair Cash Offer.</span>
                 </h1>
-                <p class="hero-copy">Sell as-is with no repairs, no showings, and no seller-side commissions. We give you a straightforward cash offer and let you decide if it works.</p>
+                <p class="hero-copy">Sell as-is. No repairs. No showings. No commissions. Just a straight cash offer — you decide if it works.</p>
 
                 <div class="hero-actions">
                     <a class="button" href="#start">Schedule a consultation</a>
@@ -975,20 +976,20 @@
         <section class="promise-band" aria-label="Core promises">
             <div class="container promise-grid">
                 <div class="promise">
-                    <strong>As-is means as-is</strong>
-                    <span>No cleaning, staging, open houses, or repair list before we talk.</span>
+                    <strong>Sell as-is</strong>
+                    <span>No cleaning, staging, open houses, or repair lists.</span>
                 </div>
                 <div class="promise">
                     <strong>Clear numbers</strong>
-                    <span>We explain offer price, closing costs, and your estimated net.</span>
+                    <span>We show the offer, closing costs, and your net — no surprises.</span>
                 </div>
                 <div class="promise">
                     <strong>Your timeline</strong>
-                    <span>Close quickly when needed, or slow it down if life needs room.</span>
+                    <span>Close in 14 days or take your time. Your call.</span>
                 </div>
                 <div class="promise">
                     <strong>No obligation</strong>
-                    <span>A conversation and offer should not trap you into a decision.</span>
+                    <span>An offer and conversation never traps you.</span>
                 </div>
             </div>
         </section>
@@ -996,35 +997,35 @@
         <section id="options" class="section tight-bottom">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-kicker">Compare paths</span>
-                    <h2>There's never one way.</h2>
-                    <p class="lead">Instead of pretending one option is always best, we start with your timeline, property condition, and bottom line.</p>
+                    <span class="section-kicker">Your options</span>
+                    <h2>There's more than one way to sell.</h2>
+                    <p class="lead">We lay out the tradeoffs so you can choose what matters — speed, money, or control.</p>
                 </div>
                 <div class="option-grid">
                     <article class="option">
                         <span class="label">Fastest</span>
-                        <h3>Sell to a cash buyer</h3>
-                        <p>Best when you need certainty, want to skip repairs, or do not want buyers walking through the house.</p>
+                        <h3>Cash buyer (us)</h3>
+                        <p>Best when you need certainty and want to skip repairs and showings.</p>
                     </article>
                     <article class="option">
-                        <span class="label">Potential upside</span>
+                        <span class="label">Most money</span>
                         <h3>Home Advantage Program</h3>
-                        <p>Best when the home is market-ready, you have time, and want full exposure to retail buyers.</p>
+                        <p>Best when the home is market-ready and you have time for full retail exposure.</p>
                     </article>
                     <article class="option">
-                        <span class="label">Do-it-yourself</span>
+                        <span class="label">DIY</span>
                         <h3>For sale by owner</h3>
-                        <p>Can save on listing commission and gives you control, but you handle pricing, marketing, showings, negotiation, contracts, and buyer financing risk yourself.</p>
+                        <p>Save on commission but you handle everything — pricing, marketing, showings, contracts.</p>
                     </article>
                     <article class="option">
                         <span class="label">Traditional</span>
                         <h3>List with a Realtor</h3>
-                        <p>Can bring wider market exposure and professional guidance, but usually includes commissions, showings, repairs, longer timelines, and buyer contingencies.</p>
+                        <p>Full service but includes commissions, showings, repairs, and 60-120+ day timelines.</p>
                     </article>
                     <article class="option">
-                        <span class="label">Control</span>
-                        <h3>Keep or delay the sale</h3>
-                        <p>Sometimes the better move is waiting, renting, refinancing, or solving one urgent issue first.</p>
+                        <span class="label">Wait</span>
+                        <h3>Keep or delay</h3>
+                        <p>Rent it out, refinance, fix one thing first, or just wait for a better market.</p>
                     </article>
                 </div>
             </div>
@@ -1035,26 +1036,26 @@
         <section id="process" class="section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-kicker">Our Process</span>
-                    <h2>The Four Simple Steps</h2>
-                    <p class="lead">A cash as-is sale should feel simple from the first conversation to the closing table.</p>
+                    <span class="section-kicker">How it works</span>
+                    <h2>Four simple steps</h2>
+                    <p class="lead">From first conversation to closing table.</p>
                 </div>
                 <div class="steps">
                     <article class="step">
-                        <h3>Request your cash offer</h3>
-                        <p>Send us the property address and a few details about the home so we can start reviewing your options.</p>
+                        <h3>1. Send us your address</h3>
+                        <p>Two minutes. Just the basics about the property.</p>
                     </article>
                     <article class="step">
-                        <h3>We review it as-is</h3>
-                        <p>We look at the property, repair needs, local values, and your timeline so the offer fits the real situation.</p>
+                        <h3>2. We review as-is</h3>
+                        <p>We look at comps, repair needs, and your timeline — no walkthrough required.</p>
                     </article>
                     <article class="step">
-                        <h3>Get a clear cash number</h3>
-                        <p>You receive a straightforward cash offer with no seller-side commissions, repairs, cleanup, or prep needed, and no obligation to accept.</p>
+                        <h3>3. Get a cash offer</h3>
+                        <p>Straight numbers. No commissions. No repairs. No obligation to accept.</p>
                     </article>
                     <article class="step">
-                        <h3>Close on your schedule</h3>
-                        <p>If the offer works, we coordinate title and paperwork so you can close in as soon as 14 days or choose a date that gives you room.</p>
+                        <h3>4. Close on your terms</h3>
+                        <p>As soon as 14 days, or whenever works for you. We handle the paperwork.</p>
                     </article>
                 </div>
             </div>
@@ -1065,25 +1066,23 @@
                 <div>
                     <span class="section-kicker">Our Promise</span>
                     <h2>The HomeQuest Solutions Standard</h2>
-                    <p class="lead">A cash sale should be clear, respectful, and easy to understand before you make a decision.</p>
+                    <p class="lead">A cash sale should be clear, respectful, and easy to understand.</p>
                 </div>
                 <div class="compare">
                     <div class="compare-panel">
-                        <h3>Clear from the start</h3>
+                        <h3>What you get</h3>
                         <ul>
                             <li>A straightforward cash offer in writing.</li>
-                            <li>No seller-side commissions.</li>
-                            <li>No repairs, cleanup, or prep required.</li>
-                            <li>A closing timeline built around your move.</li>
+                            <li>No commissions. No repairs. No prep.</li>
+                            <li>Close on your timeline (as soon as 14 days).</li>
                         </ul>
                     </div>
                     <div class="compare-panel">
-                        <h3>Pressure kept out</h3>
+                        <h3>What you avoid</h3>
                         <ul>
-                            <li>No open houses or repeated showings.</li>
-                            <li>No fake urgency or countdown tactics.</li>
-                            <li>No obligation after you see the offer.</li>
-                            <li>No chasing you if the offer is not right.</li>
+                            <li>No open houses or strangers in your home.</li>
+                            <li>No fake urgency or pressure tactics.</li>
+                            <li>No obligation — ever.</li>
                         </ul>
                     </div>
                 </div>
@@ -1091,38 +1090,46 @@
         </section>
 
         <section id="faq" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-kicker">Questions</span>
-                    <h2>Commonly Asked Questions</h2>
-                </div>
-                <div class="faq-grid">
-                    <article class="faq-item">
-                        <h3>Will a cash offer be lower than listing?</h3>
-                        <p>Often, yes. The tradeoff is speed, certainty, privacy, and avoiding repairs, showings, commissions, and extra months of holding costs.</p>
-                    </article>
-                    <article class="faq-item">
-                        <h3>Do I have to clean or fix anything?</h3>
-                        <p>No. We evaluate the property in its current condition and factor repairs into the offer instead of asking you to complete them first.</p>
-                    </article>
-                    <article class="faq-item">
-                        <h3>How fast can closing happen?</h3>
-                        <p>That depends on title, local requirements, and your situation. If everything is clear, as soon as 14 days.</p>
-                    </article>
-                    <article class="faq-item">
-                        <h3>Am I committed after requesting options?</h3>
-                        <p>No. The first conversation is meant to help you understand your choices. You decide whether the offer makes sense.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+                    <div class="container">
+                        <div class="section-header">
+                            <span class="section-kicker">Questions</span>
+                            <h2>Straight answers</h2>
+                        </div>
+                        <div class="faq-grid">
+                            <article class="faq-item">
+                                <h3>Is a cash offer lower than listing?</h3>
+                                <p>Often yes. You trade some price for speed, certainty, no repairs, no showings, no commissions, and no holding costs.</p>
+                            </article>
+                            <article class="faq-item">
+                                <h3>Do I clean or fix anything?</h3>
+                                <p>No. We buy as-is. Repairs are factored into the offer — you don't do them.</p>
+                            </article>
+                            <article class="faq-item">
+                                <h3>How fast can we close?</h3>
+                                <p>As soon as 14 days if title is clear. You pick the date.</p>
+                            </article>
+                            <article class="faq-item">
+                                <h3>Am I locked in after asking?</h3>
+                                <p>No. No obligation. You see the offer, then decide.</p>
+                            </article>
+                            <article class="faq-item">
+                                <h3>What if I have a mortgage or liens?</h3>
+                                <p>We pay them off at closing from the proceeds. You walk with the net.</p>
+                            </article>
+                            <article class="faq-item">
+                                <h3>Can I stay after closing?</h3>
+                                <p>Yes. Rent-backs are common — we build it into the terms.</p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
 
         <section id="contact" class="section">
             <div class="container contact-wrap">
                 <div>
                     <span class="section-kicker">Schedule a consultation</span>
                     <h2>Ready for a clear conversation?</h2>
-                    <p class="lead">Send us the basics and we'll review the property as-is, with no repairs, showings, or seller-side commissions required.</p>
+                    <p class="lead">Send us the basics and we'll review the property as-is — no repairs, showings, or commissions.</p>
                     <div class="note">
                         <strong>Prefer to call?</strong>
                         <p><a href="tel:5551234567">(555) 123-4567</a></p>

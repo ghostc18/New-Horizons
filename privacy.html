@@ -11,17 +11,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --ink: #17251f;
-            --muted: #5f685f;
-            --line: #ead8c4;
-            --paper: #fffaf3;
+            --ink: #2d2520;
+            --muted: #6b5b4f;
+            --line: #d4c4b0;
+            --paper: #faf6f0;
             --white: #ffffff;
-            --field: #fff1e3;
-            --forest: #17634f;
-            --forest-dark: #0f4538;
-            --orange: #e46f2b;
-            --orange-dark: #b95022;
-            --shadow: 0 22px 60px rgba(23, 99, 79, 0.13);
+            --field: #f3ebe1;
+            --brown: #8b6b4a;
+            --brown-dark: #6b4f36;
+            --brown-light: #a68564;
+            --cream: #f5efe7;
+            --shadow: 0 22px 60px rgba(139, 107, 74, 0.15);
+            --cream-dark: #e8dfd3;
             --radius: 8px;
             --max: 1180px;
         }
@@ -63,7 +64,7 @@
             top: 0;
             z-index: 20;
             background: rgba(255, 250, 243, 0.92);
-            border-bottom: 1px solid rgba(228, 111, 43, 0.16);
+            border-bottom: 1px solid rgba(139, 107, 74, 0.16);
             backdrop-filter: blur(16px);
         }
 
@@ -118,7 +119,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--forest);
+            color: var(--brown);
         }
 
         .nav-phone {
@@ -133,8 +134,8 @@
             border-radius: 999px;
             padding: 8px 12px;
             color: var(--white);
-            background: var(--forest);
-            box-shadow: 0 8px 18px rgba(23, 99, 79, 0.16);
+            background: var(--brown);
+            box-shadow: 0 8px 18px rgba(139, 107, 74, 0.16);
         }
 
         .hero {
@@ -155,7 +156,7 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 22px;
-            color: var(--orange-dark);
+            color: var(--brown-dark);
             font-size: 0.78rem;
             font-weight: 800;
             letter-spacing: 0.12em;
@@ -166,7 +167,7 @@
             content: "";
             width: 36px;
             height: 2px;
-            background: var(--orange);
+            background: var(--brown);
         }
 
         .hero-title-line {
@@ -200,7 +201,7 @@
         .legal-section {
             padding: 56px 0;
             background: var(--white);
-            border-top: 1px solid rgba(228, 111, 43, 0.16);
+            border-top: 1px solid rgba(139, 107, 74, 0.16);
         }
 
         .section-header {
@@ -209,7 +210,7 @@
         }
 
         .section-kicker {
-            color: var(--orange-dark);
+            color: var(--brown-dark);
             font-size: 0.78rem;
             font-weight: 850;
             letter-spacing: 0.12em;
@@ -268,22 +269,22 @@
             border-radius: 999px;
             padding: 11px 18px;
             color: var(--white);
-            background: var(--forest);
+            background: var(--brown);
             font-weight: 800;
             text-decoration: none;
             cursor: pointer;
-            box-shadow: 0 10px 24px rgba(23, 99, 79, 0.18);
+            box-shadow: 0 10px 24px rgba(139, 107, 74, 0.18);
             transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
         }
 
         .button:hover {
-            background: var(--forest-dark);
+            background: var(--brown-dark);
             transform: translateY(-1px);
         }
 
         .site-footer {
             padding: 48px 0;
-            background: var(--forest-dark);
+            background: var(--brown-dark);
             color: rgba(255, 255, 255, 0.76);
         }
 
@@ -316,7 +317,7 @@
             margin-bottom: 14px;
             background: var(--paper);
             border-radius: var(--radius);
-            border: 1px solid rgba(228, 111, 43, 0.22);
+            border: 1px solid rgba(139, 107, 74, 0.22);
         }
 
         .footer-logo-wrap img {
