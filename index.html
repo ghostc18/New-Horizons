@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomeQuest Solutions | A Clear Way Forward for Home Sellers</title>
-        <meta name="description" content="HomeQuest Solutions helps homeowners compare practical selling options, including as-is cash offers, clear timelines, and no-pressure consultations.">
-        <link rel="icon" type="image/webp" href="images/homequest-logo-no-tagline.webp">
+    <meta name="description" content="HomeQuest Solutions helps homeowners compare practical selling options, including as-is cash offers, clear timelines, and no-pressure consultations.">
+    <link rel="icon" type="image/webp" href="images/homequest-logo-no-tagline-transparent.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --ink: #17251f;
@@ -918,7 +921,7 @@
                 <a class="nav-cta" href="#contact">Schedule a consultation</a>
             </div>
             <a class="brand" href="/">
-                <img class="brand-logo" src="images/homequest-logo.webp" alt="HomeQuest Solutions">
+                <img class="brand-logo" src="images/homequest-logo-transparent.webp" alt="HomeQuest Solutions">
             </a>
             <ul class="nav-links" aria-label="Primary navigation">
                 <li><a href="#options">Your Options</a></li>
@@ -944,6 +947,12 @@
                 <div class="hero-actions">
                     <a class="button" href="#start">Schedule a consultation</a>
                     <a class="button secondary" href="#trust">See our standard</a>
+                </div>
+
+                <div class="trust-bar">
+                    <div class="trust-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M9 12l2 2 4-4"></path></svg> No obligation</div>
+                    <div class="trust-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12V7H5"></path><path d="M12 17v5"></path><path d="M9 12l3 3 6-6"></path></svg> As-is condition</div>
+                    <div class="trust-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Close in 14 days</div>
                 </div>
             </div>
         </section>
@@ -1210,7 +1219,7 @@
         <div class="container footer-grid">
             <div>
                 <span class="footer-logo-wrap">
-                    <img src="images/homequest-logo-no-tagline.webp" alt="HomeQuest Solutions">
+                    <img src="images/homequest-logo-no-tagline-transparent.webp" alt="HomeQuest Solutions">
                 </span>
                 <p>A clearer, calmer way to compare your home selling options when a traditional listing may not fit.</p>
             </div>
@@ -1229,14 +1238,14 @@
                 <h3>Contact</h3>
                 <ul class="footer-links">
                     <li><a href="tel:5551234567">(555) 123-4567</a></li>
-                    <li><a href="mailto:hello@newhorizons.com">hello@newhorizons.com</a></li>
+                    <li><a href="mailto:isaiahjrod5@gmail.com">isaiahjrod5@gmail.com</a></li>
                 </ul>
             </div>
         </div>
     </footer>
 
     <div class="mobile-sticky-cta" aria-hidden="true">
-        <a class="button" href="#contact">Get My Offer</a>
+        <a class="button" href="#contact">Schedule a consultation</a>
     </div>
 
     <script>
@@ -1260,8 +1269,22 @@
                 }
             });
         });
+
+        // Mobile sticky CTA show/hide on scroll
+        const stickyCta = document.querySelector('.mobile-sticky-cta');
+        const heroSection = document.querySelector('.hero');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            if (!stickyCta || !heroSection) return;
+            const heroBottom = heroSection.getBoundingClientRect().bottom;
+            if (heroBottom < 0) {
+                stickyCta.classList.add('is-visible');
+            } else {
+                stickyCta.classList.remove('is-visible');
+            }
+        });
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByejLvhEDEwNLh3HmMFtSP-QvchsZumvQ&libraries=places"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/leads.js"></script>
 </body>

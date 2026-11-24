@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# GitHub Pages Deployment Script for New Horizons Website
+# GitHub Pages Deployment Script for HomeQuest Solutions Website
 # This script deploys the updated website (EmailJS + Mobile-First) to GitHub Pages
 
-REPO_URL="https://github.com/ghostc35/New-Horizons.git"
+REPO_URL="https://github.com/ghostc18/New-Horizons.git"
 BRANCH="main"
 DEPLOY_BRANCH="gh-pages"
 
@@ -122,7 +122,7 @@ EOF
         print_success "js/leads.js found"
     fi
     
-    if [ ! -f "images/sold-home-illustration.png" ] && [ ! -f "images/new-horizons-logo.png" ]; then
+    if [ ! -f "images/sold-home-illustration.png" ] && [ ! -f "images/homequest-logo.png" ]; then
         print_warning "Images directory not found - creating placeholder"
         mkdir -p images
         for i in {1..3}; do
@@ -274,9 +274,9 @@ print_deployment_info() {
 
 # Main execution
 main() {
-    echo -e "${BLUE}🚀 New Horizons GitHub Pages Deployment Script${NC}"
+    echo -e "${BLUE}🚀 HomeQuest Solutions GitHub Pages Deployment Script${NC}"
     echo
-    echo "This script deploys your updated New Horizons website with:"
+    echo "This script deploys your updated HomeQuest Solutions website with:"
     echo "• EmailJS integration for lead capture"
     echo "• Mobile-first responsive design (4 breakpoints)"
     echo "• Modern build system (Vite + PostCSS)"
